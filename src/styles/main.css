@@ -22,8 +22,9 @@ section h1{
     font-size: 2em ;
     font-family: var(--title-font);
     text-align: center;
-    color: var(--title-theme);
-    text-shadow: 0 0 10px var(--title-theme), 0 0 20px var(--title-theme);
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(180deg,var(--title-theme) 40%,  var(--Watch-border) 70%);
 }
 
 section .circle{
@@ -81,7 +82,7 @@ section .group-btn{
 }
 
 section .group-btn button{
-    background-color: var(--button-bg);
+    background-image: linear-gradient(45deg,var(--title-theme) 30%,  var(--button-bg) 70%);
     color: var(--button-text);
     display: flex;
     justify-content: center;
