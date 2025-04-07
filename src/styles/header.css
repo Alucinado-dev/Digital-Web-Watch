@@ -60,24 +60,5 @@ header nav ul button img{
     margin-right: 1rem;
 }
 
-header>a{
-    background-color: var(--button-portfolio);
-    color: #f3cadc;
-    padding: 1rem 2rem;
-    border-radius: .5rem;
-    cursor: pointer;
-    transition: all 300ms;
-    outline: none;
-    font-family: var(--portifolio-font);
-    display: none
 
-    &:hover, &:focus{
-        transform: translate(5px, -1px);
-        box-shadow: -3px 1px 5px rgba(0, 0, 0, 0.5);
-    }
-}
-
-.sidebar-burguer{
-    display: none;
-}
 
