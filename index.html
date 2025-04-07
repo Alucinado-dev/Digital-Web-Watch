@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="src/styles/header.css">
     <link rel="stylesheet" href="src/styles/main.css">
     <link rel="stylesheet" href="src/styles/aside.css">
+    <link rel="stylesheet" href="src/styles/footer.css">
     <link rel="stylesheet" href="src/styles/responsive.css">
 </head>
 
@@ -28,77 +29,85 @@
                 <li> <button id="nav-pomodoro"><img src="src/assets/pomodoro.svg" alt="">Pomodoro</button></li>
             </ul>
         </nav>
-
-        <a href="http://" target="_blank" rel="noopener noreferrer">Portifolio </a>
     </header>
     
-        <main>
+    <main>
+        
+        <section id="stopwatch">
+            <h1>Cronômetro</h1>
 
-            <section id="stopwatch">
-                <h1>Cronômetro</h1>
-
-                <div class="circle">
-                    <span>00:00:00:00</span>
-                </div>
-
-                <div class="group-btn">
-                    <button class="play"><img src="src/assets/play.svg" id="toggle-play"  alt=""></button>
-                    <button class="reset"><img src="src/assets/reset.svg" alt=""></button>
-                    <button class="flag"><img src="src/assets/flag.svg" alt=""></button>
-                </div>
-            </section>
-
-            <section id="timer">
-                <h1>Temporizador</h1>
-
-                <div class="circle">
-                    <input type="number" id="timer-hours" min="0" max="23"  maxlength="2" placeholder="00" > <p>:</p>
-                    <input type="number" id="timer-minutes" min="0" max="59"  maxlength="2" placeholder="00"> <p>:</p>
-                    <input type="number" id="timer-seconds" min="0" max="59"  maxlength="2" placeholder="00" >
-                </div>
-
-                <div class="group-btn">
-                    <button class="play"><img src="src/assets/play.svg" id="toggle-play-timer" alt=""></button>
-                    <button class="reset"><img src="src/assets/reset.svg" alt=""></button>
-                    <button class="flag"><img src="src/assets/flag.svg" alt=""></button>
-                </div>
-            </section>
-
-            <section id="pomodoro">
-                <h1>Pomodoro</h1>
-                <div class="circle">
-                    <span>25:00</span>
-                </div>
-                <div class="group-btn">
-                    <button class="play"><img src="src/assets/play.svg" id="toggle-play-pomodoro"  alt=""></button>
-                    <button class="reset"><img src="src/assets/reset.svg" alt=""></button>
-                    <button class="flag"><img src="src/assets/flag.svg" alt=""></button>
-                </div>
-            </section>
-
-            <content id="time-flag">
-            </content>
-            
-        </main>
-
-        <aside id="sidebar-theme">
-            <h2><img src="src/assets/roll.svg" alt="">temas</h2>
-
-            <button id="toggle-sidebar"><img src="src/assets/arrow-right.svg" alt=""></button>
-            <div>
-                <ul>
-                    <li><button class="btn-theme" id="theme1"></button>Cyberpunk</li>
-                    <li><button class="btn-theme" id="theme2"></button>Deep Ocean</li>
-                    <li><button class="btn-theme" id="theme3"></button>Sakura</li>
-                    <li><button class="btn-theme" id="theme4"></button>Mint</li>
-                    <li><button class="btn-theme" id="theme5"></button>Dune</li>
-                    <li><button class="btn-theme" id="theme6"></button>Cloudy </li>
-                </ul>
+            <div class="circle">
+                <span>00:00:00:00</span>
             </div>
-        </aside>
 
-        <!-- scripts -->
-        <script src="scripts/index.js"></script>
-        <script src="scripts/alternative-styles.js"></script>
+            <div class="group-btn">
+                <button class="play"><img src="src/assets/play.svg" id="toggle-play"  alt=""></button>
+                <button class="reset"><img src="src/assets/reset.svg" alt=""></button>
+                <button class="flag"><img src="src/assets/flag.svg" alt=""></button>
+            </div>
+        </section>
+
+        <section id="timer">
+            <h1>Temporizador</h1>
+
+            <div class="circle">
+                <input type="number" id="timer-hours" min="0" max="23"  maxlength="2" placeholder="00" > <p>:</p>
+                <input type="number" id="timer-minutes" min="0" max="59"  maxlength="2" placeholder="00"> <p>:</p>
+                <input type="number" id="timer-seconds" min="0" max="59"  maxlength="2" placeholder="00" >
+            </div>
+
+            <div class="group-btn">
+                <button class="play"><img src="src/assets/play.svg" id="toggle-play-timer" alt=""></button>
+                <button class="reset"><img src="src/assets/reset.svg" alt=""></button>
+                <button class="flag"><img src="src/assets/flag.svg" alt=""></button>
+            </div>
+        </section>
+
+        <section id="pomodoro">
+            <h1>Pomodoro</h1>
+            <div class="circle">
+                <span>25:00</span>
+            </div>
+            <div class="group-btn">
+                <button class="play"><img src="src/assets/play.svg" id="toggle-play-pomodoro"  alt=""></button>
+                <button class="reset"><img src="src/assets/reset.svg" alt=""></button>
+                <button class="flag"><img src="src/assets/flag.svg" alt=""></button>
+            </div>
+        </section>
+
+        <content id="time-flag">
+        </content>
+            
+    </main>
+    
+    <aside id="sidebar-theme">
+        <h2><img src="src/assets/roll.svg" alt="">temas</h2>
+
+        <button id="toggle-sidebar"><img src="src/assets/arrow-right.svg" alt=""></button>
+        <div>
+            <ul>
+                <li><button class="btn-theme" id="theme1"></button>Cyberpunk</li>
+                <li><button class="btn-theme" id="theme2"></button>Deep Ocean</li>
+                <li><button class="btn-theme" id="theme3"></button>Sakura</li>
+                <li><button class="btn-theme" id="theme4"></button>Mint</li>
+                <li><button class="btn-theme" id="theme5"></button>Dune</li>
+                <li><button class="btn-theme" id="theme6"></button>Cloudy </li>
+            </ul>
+        </div>
+    </aside>
+
+    <footer>
+        <div class="developed-by">
+            <p id="dev-by"> 
+                Developed with 💜 by 
+            </p>
+            <a href="https://alucinado-dev.vercel.app" target="_blank" rel="noopener noreferrer"></a>                
+            <img src="src/assets/ALucin4do-logo.png" alt="logo of ALucin4do">
+        </div>
+    </footer>
+
+    <!-- scripts -->
+    <script src="scripts/index.js"></script>
+    <script src="scripts/alternative-styles.js"></script>
 </body>
 </html>

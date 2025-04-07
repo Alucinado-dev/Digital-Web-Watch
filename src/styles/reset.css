@@ -49,8 +49,8 @@ table {
 
 a{
     text-decoration: none;
+    outline: none;
 }
-
 
 img{
     width: 100%;
@@ -58,16 +58,28 @@ img{
 	z-index: 1;
 }
 
+
+:root{
+    font-size: 62.5%;
+	box-sizing: border-box;
+}
+
 /* Media Queries 
-small-mobile: 320px;
-mobile: 480px;
-small-tablet: 600px;
-tablet: 768px;
-large-tablet: 964px;
-laptop: 1024px;
-desktop: 1280px;
-large-desktop: 1440px; 
+    --small-mobile: 320px;
+    --mobile: 480px;
+    --small-tablet: 600px;
+    --tablet: 768px;
+    --large-tablet: 964px;
+    --laptop: 1024px;
+    --desktop: 1280px;
+    --large-desktop: 1440px;
+*/
+
+/* 
+
 */
 
 
 
+
+/*   */
