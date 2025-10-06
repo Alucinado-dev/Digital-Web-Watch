@@ -9,6 +9,11 @@ npx  create-vite@latest no arquivo onde ficam todos os projetos de programação
 npm install
 npm run dev
 
+### configurações do GIT
+
+git config core.eol lf
+git config core.autocrlf input
+
 ### instalar Dependencias de Dev
 
 npm install --save-dev prettier eslint-config-prettier typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-simple-import-sort
