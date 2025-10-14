@@ -1,4 +1,5 @@
-import { Heading } from "./components/heading/Heading"
+import Container from "./components/Container/Container"
+
 
 
 
@@ -6,7 +7,10 @@ function App() {
 
   return (
     <>
-      <Heading> Olá mundo 1</Heading>
+      <Container isFluid= {false} >
+        home
+      </Container>
+    
     </>
   )
 }

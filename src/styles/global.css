@@ -1,0 +1,73 @@
+:root{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+}
+
+
+@theme {
+    /* neon */
+    --color-blue-marguerite-50: #f5f5fd;
+--color-blue-marguerite-100: #edecfb;
+--color-blue-marguerite-200: #deddf7;
+--color-blue-marguerite-300: #c6c1f1;
+--color-blue-marguerite-400: #a89de8;
+--color-blue-marguerite-500: #8b75dd;
+--color-blue-marguerite-600: #8163d3;
+--color-blue-marguerite-700: #6745bc;
+--color-blue-marguerite-800: #56399e;
+--color-blue-marguerite-900: #483181;
+--color-blue-marguerite-950: #2c1e57;
+
+--color-scooter-50: #effbfc;
+--color-scooter-100: #d7f5f6;
+--color-scooter-200: #b3e9ee;
+--color-scooter-300: #7fd7e1;
+--color-scooter-400: #43bdcc;
+--color-scooter-500: #28a1b2;
+--color-scooter-600: #248396;
+--color-scooter-700: #246a7a;
+--color-scooter-800: #255765;
+--color-scooter-900: #234956;
+--color-scooter-950: #12303a;
+
+--color-brilliant-rose-50: #fcf3f9;
+--color-brilliant-rose-100: #fbe8f4;
+--color-brilliant-rose-200: #f8d2ea;
+--color-brilliant-rose-300: #f4add9;
+--color-brilliant-rose-400: #ec7abd;
+--color-brilliant-rose-500: #e253a3;
+--color-brilliant-rose-600: #d03282;
+--color-brilliant-rose-700: #b42269;
+--color-brilliant-rose-800: #951f57;
+--color-brilliant-rose-900: #7c1f4a;
+--color-brilliant-rose-950: #4b0c29;
+
+
+
+--color-orange-peel-50: #fffbeb;
+--color-orange-peel-100: #fff3c6;
+--color-orange-peel-200: #ffe588;
+--color-orange-peel-300: #ffd149;
+--color-orange-peel-400: #ffbc20;
+--color-orange-peel-500: #fa9f12;
+--color-orange-peel-600: #dd7302;
+--color-orange-peel-700: #b74f06;
+--color-orange-peel-800: #953c0b;
+--color-orange-peel-900: #7a320d;
+--color-orange-peel-950: #461902;
+
+--color-voodoo-50: #faf8fb;
+--color-voodoo-100: #f4f0f7;
+--color-voodoo-200: #e7e0ee;
+--color-voodoo-300: #d5c7e0;
+--color-voodoo-400: #bba4ce;
+--color-voodoo-500: #9e7fb6;
+--color-voodoo-600: #816198;
+--color-voodoo-700: #6a4e7d;
+--color-voodoo-800: #543e62;
+--color-voodoo-900: #4b3956;
+--color-voodoo-950: #2c1d35;
+}

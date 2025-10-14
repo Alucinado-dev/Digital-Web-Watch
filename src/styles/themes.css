@@ -1,0 +1,55 @@
+
+[data-theme=neon]{
+    --primary : var(--color-red-500);
+    --title-theme1 : #4cc9f0;
+    --Watch-border-theme1 : #F72585;
+    --watch-numbers-theme1 : #ffd500;
+    --button-bg-theme1 : #F72585;
+
+}
+
+[data-theme=deep-ocean]{
+    --primary : var(--color-blue-500);
+    --title-theme2 : #03045e;
+    --Watch-border-theme2 : #0077b6;
+    --watch-numbers-theme2 : #ade8f4;
+    --button-bg-theme2 : #023e8a;
+
+}
+
+[data-theme=sakura]{
+    --primary : var(--color-pink-500);
+    --title-theme3 : #ff758f;
+    --Watch-border-theme3 : #ff4d6d;
+    --watch-numbers-theme3 : #ffc8dd;
+    --button-bg-theme3 : #ff4d6d;
+
+}
+
+[data-theme=mint]{
+    --primary : var(--color-green-500);
+    --title-theme4 : #009975;
+    --Watch-border-theme4 : #00c698;
+    --watch-numbers-theme4 : #90e0ef;
+    --button-bg-theme4 : #00c698;
+
+}
+
+[data-theme=dune]{
+    --primary : var(--color-yellow-500);
+    --title-theme5 : #ffbf69;
+    --Watch-border-theme5 : #ff9f1c;
+    --watch-numbers-theme5 : #ffe5b4;
+    --button-bg-theme5 : #ff9f1c;
+
+}
+
+[data-theme=cloudy]{
+    --primary : var(--color-blue-500);
+     --title-theme6 : #9a8c98;
+    --Watch-border-theme6 : #6a4c93;
+    --watch-numbers-theme6 : #c9c1d3;
+    --button-bg-theme6 : #6a4c93;
+
+}
+
