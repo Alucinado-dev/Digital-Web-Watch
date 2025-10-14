@@ -11,6 +11,10 @@
   "proseWrap": "always",
   "quoteProps": "as-needed",
   "requirePragma": false,
+  "endOfLine": "crlf",
+  "singleAttributePerLine": false,
   "tabWidth": 4,
-  "trailingComma": "all"
+  "trailingComma": "all",
+  "experimentalTernaries": true
+  
 }
