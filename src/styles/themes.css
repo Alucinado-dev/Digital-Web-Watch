@@ -1,5 +1,5 @@
 
-[data-theme=neon]{
+[data-theme=neon-dreams]{
     --primary : var(--color-red-500);
     --title-theme1 : #4cc9f0;
     --Watch-border-theme1 : #F72585;
@@ -17,7 +17,7 @@
 
 }
 
-[data-theme=sakura]{
+[data-theme=sakura-blossom]{
     --primary : var(--color-pink-500);
     --title-theme3 : #ff758f;
     --Watch-border-theme3 : #ff4d6d;
@@ -26,7 +26,7 @@
 
 }
 
-[data-theme=mint]{
+[data-theme=mint-leaves]{
     --primary : var(--color-green-500);
     --title-theme4 : #009975;
     --Watch-border-theme4 : #00c698;
@@ -35,7 +35,7 @@
 
 }
 
-[data-theme=dune]{
+[data-theme=dune-glow]{
     --primary : var(--color-yellow-500);
     --title-theme5 : #ffbf69;
     --Watch-border-theme5 : #ff9f1c;
@@ -44,7 +44,7 @@
 
 }
 
-[data-theme=cloudy]{
+[data-theme=overcast]{
     --primary : var(--color-blue-500);
      --title-theme6 : #9a8c98;
     --Watch-border-theme6 : #6a4c93;
