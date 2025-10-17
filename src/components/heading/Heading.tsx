@@ -1,12 +1,12 @@
 import React from 'react'
-import style from './Heading.module.css'
 
-type Props = {
-    children: React.ReactNode
+
+type HeadingProps = {
+  children: React.ReactNode
 }
 
-const Heading = (props: Props) => {
-    return <h1 className={style.heading}>{props.children}</h1>
+const Heading = ({ children }: HeadingProps) => {
+  return <h1 className='text-[var(--heading-color)] text-6xl font-bold font-(family-name:--heading-font) text-shadow-[var(--heading-shadow)] '>{children}</h1>
 }
 
 export { Heading }

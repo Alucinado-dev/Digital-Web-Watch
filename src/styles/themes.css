@@ -1,10 +1,21 @@
 
 [data-theme=neon-dreams]{
-    --primary : var(--color-red-500);
-    --title-theme1 : #4cc9f0;
-    --Watch-border-theme1 : #F72585;
-    --watch-numbers-theme1 : #ffd500;
-    --button-bg-theme1 : #F72585;
+    
+    --heading-color : var(--color-purple-heart-800);
+    --heading-shadow : 0 5px 10px  var(--color-purple-heart-950);
+    
+    --navlink-box-color: ;
+    --navlink-box-border: ;
+    --navlink-box-shadow: ;
+    --navlink-box-hover: ;
+    --navlink-box-active: ;
+    --navlink-box-visited: ;
+    --navlink-font: ;
+    --navlink-text-color: ;
+    --navlink-text-shadow: ; 
+    --navlink-text-hover: ;
+    --navlink-text-active: ;
+    --navlink-text-visited: ;
 
 }
 

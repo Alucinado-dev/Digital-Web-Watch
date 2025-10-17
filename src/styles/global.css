@@ -1,11 +1,6 @@
 :root{
-    font-size: 62.5%;
+    --heading-font: :
 }
-
-body{
-    font-size: 1.6rem;
-}
-
 
 @theme {
     /* sla*/
@@ -474,33 +469,5 @@ body{
 --color-bright-gray-800: #344258;
 --color-bright-gray-900: #2d3748; /* ! base*/
 --color-bright-gray-950: #1f2532;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
