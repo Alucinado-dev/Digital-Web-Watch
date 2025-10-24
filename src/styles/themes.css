@@ -1,8 +1,7 @@
 
 [data-theme=neon-dreams]{
     
-    --heading-color : var(--color-purple-heart-800);
-    --heading-shadow : 0 5px 10px  var(--color-purple-heart-950);
+    --Header-bg-color: ;
     
     --navlink-box-color: ;
     --navlink-box-border: ;
@@ -10,12 +9,15 @@
     --navlink-box-hover: ;
     --navlink-box-active: ;
     --navlink-box-visited: ;
-    --navlink-font: ;
+
     --navlink-text-color: ;
     --navlink-text-shadow: ; 
     --navlink-text-hover: ;
     --navlink-text-active: ;
     --navlink-text-visited: ;
+
+        --heading-color : var(--color-purple-heart-800);
+    --heading-shadow : 0 5px 10px  var(--color-purple-heart-950);
 
 }
 

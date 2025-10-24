@@ -1,6 +1,9 @@
-import Container from "./components/Container/Container"
+
+import CountDown from "./components/CountDown/CountDown"
 import { Heading } from "./components/heading/Heading"
 import Logo from "./components/logo/Logo"
+import Navbar from "./components/Navbar/Navbar"
+
 
 
 
@@ -9,13 +12,20 @@ function App() {
 
   return (
     <>
-      <Container isFluid= {false} >
-        <Heading > Digital Web Watch </Heading>
-      </Container>
+        <header>
+          <Navbar/>
+        </header>
 
-      <Container isFluid = {true} > 
+        <section className="w-full flex items-center justify-center gap-8 mx-auto py-3.5">
         <Logo/>
-      </Container>
+        <Heading> Digital Web Watch </Heading>
+        </section>
+
+        <section className="w-full">
+        <CountDown/>
+
+        </section>
+
     </>
   )
 }
