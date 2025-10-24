@@ -1,5 +1,16 @@
-@import 'tailwindcss';
+@import './styles/animations.css';
 @import './styles/global.css';
 @import './styles/themes.css';
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@import 'tailwindcss';
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: black;
+  position: relative;
+}
+
+main {
+  position: absolute;
+  z-index: -100;
+}
