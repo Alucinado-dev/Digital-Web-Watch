@@ -1,7 +1,14 @@
 @custom-variant neon-dreams (&:where([data-theme=neon-dreams], [data-theme=neon-dreams] *));
 [data-theme='neon-dreams'] {
+  /* body */
+  --body-bg-color-1: var(--color-shark-600);
+  --body-bg-color-2: var(--color-shark-700);
+  --body-bg-color-3: var(--color-shark-800);
+  --body-bg-color-4: var(--color-shark-900);
+  --body-bg-color-5: var(--color-shark-950);
+
   /* Header */
-  --Header-bg-color: ;
+  --Header-bg-color: transparent;
 
   --navlink-box-color: ;
   --navlink-box-border: ;

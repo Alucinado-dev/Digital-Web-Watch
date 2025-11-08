@@ -4,10 +4,30 @@
 
 @import 'tailwindcss';
 body {
-  min-width: 320px;
   min-height: 100vh;
-  background-color: black;
+  background-image: linear-gradient(
+    45deg,
+    var(--body-bg-color-1) 0%,
+    var(--body-bg-color-2) 25%,
+    var(--body-bg-color-3) 50%,
+    var(--body-bg-color-4) 75%,
+    var(--body-bg-color-5) 100%
+  );
+  background-color: var(--body-bg-color-1);
+  animation: gradient 15s ease infinite;
   position: relative;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 main {

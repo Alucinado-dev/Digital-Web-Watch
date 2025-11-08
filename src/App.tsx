@@ -15,7 +15,7 @@ function App() {
         </a>
       </section>
 
-      <section className='w-full flex items-center justify-center  mx-auto py-3.5'>
+      <section className='w-full flex  overflow-hidden  items-center justify-center  mx-auto py-14'>
         <CountDown />
       </section>
     </>
