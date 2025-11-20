@@ -27,6 +27,7 @@ npm install --save @fortawesome/react-fontawesome@latest
 ### instalar  Tailwind
 
 npm install tailwindcss @tailwindcss/vite
+no vite.config adicionar tailwindcss()
 no index.css adicionar `@import 'tailwindcss'`
 
 ### instalar Lucide Icons

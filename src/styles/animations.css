@@ -1,0 +1,23 @@
+@keyframes glowBorder {
+  0% {
+    filter: blur(20px);
+  }
+  50% {
+    filter: blur(5px);
+  }
+  100% {
+    filter: blur(20px);
+  }
+}
+
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
