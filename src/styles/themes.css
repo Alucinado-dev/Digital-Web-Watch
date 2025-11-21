@@ -1,37 +1,41 @@
 @custom-variant neon-dreams (&:where([data-theme=neon-dreams], [data-theme=neon-dreams] *));
 [data-theme='neon-dreams'] {
   /* body */
-  --body-bg-color-1: var(--color-shark-600);
-  --body-bg-color-2: var(--color-shark-700);
-  --body-bg-color-3: var(--color-shark-800);
+  --body-bg-color-1: var(--color-shark-950);
+  --body-bg-color-2: var(--color-shark-900);
+  --body-bg-color-3: var(--color-shark-950);
   --body-bg-color-4: var(--color-shark-900);
   --body-bg-color-5: var(--color-shark-950);
 
   /* Header */
   --Header-bg-color: transparent;
 
-  --navlink-box-color: ;
-  --navlink-box-border: ;
-  --navlink-box-shadow: ;
-  --navlink-box-hover: ;
-  --navlink-box-active: ;
-  --navlink-box-visited: ;
+  --navlink-box-color: transparent;
+  --navlink-box-border: transparent;
+  --navlink-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --navlink-box-hover: var(--color-aquamarine-700);
+  --navlink-box-active: var(--color-aquamarine-400);
 
-  --navlink-text-color: ;
-  --navlink-text-shadow: ;
-  --navlink-text-hover: ;
-  --navlink-text-active: ;
-  --navlink-text-visited: ;
+  --navlink-text-color: var(--color-aquamarine-400);
+  --navlink-text-shadow: 2px 2px 2px var(--color-purple-heart-800);
+  --navlink-text-hover: var(--color-aquamarine-700);
+  --navlink-text-active: var(--color-aquamarine-400);
 
   --heading-color: var(--color-purple-heart-800);
   --heading-shadow: 0 5px 10px var(--color-purple-heart-950);
 
+  --logo-text-color: var(--color-gold-500);
+  --logo-text-shadow: 1px 1px 4px var(--color-aquamarine-600);
+
   /* Countdown */
-  --countdown-bg: var(--color-scooter-950);
-  --countdown-border-1: var(--color-brilliant-rose-600);
-  --countdown-border-2: var(--color-orange-peel-100);
-  --countdown-color: var(--color-orange-peel-300);
-  --countdown-shadow: 0 4px 6px var(--color-blue-marguerite-900);
+  --countdown-bg: var(--color-shark-950);
+  --countdown-border-1: var(--color-rose-500);
+  --countdown-border-2: var(--color-seagull-400);
+  --countdown-border-3: var(--color-gold-500);
+  --countdown-border-4: var(--color-purple-heart-800);
+
+  --countdown-color: var(--color-gold-500);
+  --countdown-shadow: 0 4px 6px var(--color-aquamarine-600);
 }
 
 [data-theme='deep-ocean'] {
