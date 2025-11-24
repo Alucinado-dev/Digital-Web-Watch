@@ -1,8 +1,23 @@
+import { useTranslation } from 'react-i18next'
+
+type Theme = {
+  label: string
+  value: string
+}
+
+const themes: Theme[] = [
+  { label: 'Default', value: 'default' },
+  { label: 'Retro', value: 'retro' },
+  { label: 'Cyberpunk', value: 'cyberpunk' },
+  { label: 'Valentine', value: 'valentine' },
+  { label: 'Aqua', value: 'aqua' },
+]
 const ThemeToggle = () => {
+  const { t } = useTranslation()
   return (
     <div className='dropdown  '>
       <div tabIndex={0} role='button' className='btn m-1'>
-        Theme
+        {t('theme')}
         <svg
           width='12px'
           height='12px'
@@ -17,51 +32,17 @@ const ThemeToggle = () => {
         tabIndex={-1}
         className='dropdown-content absolute right-0 bg-base-300 rounded-box z-50 w-52 p-2 shadow-2xl'
       >
-        <li>
-          <input
-            type='radio'
-            name='theme-dropdown'
-            className='theme-controller w-full btn btn-sm btn-block btn-ghost justify-start'
-            aria-label='Default'
-            value='default'
-          />
-        </li>
-        <li>
-          <input
-            type='radio'
-            name='theme-dropdown'
-            className='theme-controller w-full btn btn-sm btn-block btn-ghost justify-start'
-            aria-label='Retro'
-            value='retro'
-          />
-        </li>
-        <li>
-          <input
-            type='radio'
-            name='theme-dropdown'
-            className='theme-controller w-full btn btn-sm btn-block btn-ghost justify-start'
-            aria-label='Cyberpunk'
-            value='cyberpunk'
-          />
-        </li>
-        <li>
-          <input
-            type='radio'
-            name='theme-dropdown'
-            className='theme-controller w-full btn btn-sm btn-block btn-ghost justify-start'
-            aria-label='Valentine'
-            value='valentine'
-          />
-        </li>
-        <li>
-          <input
-            type='radio'
-            name='theme-dropdown'
-            className='theme-controller w-full btn btn-sm btn-block btn-ghost justify-start'
-            aria-label='Aqua'
-            value='aqua'
-          />
-        </li>
+        {themes.map(({ label, value }) => (
+          <li key={value}>
+            <input
+              type='radio'
+              name='theme-dropdown'
+              className='theme-controller w-full btn btn-sm btn-block btn-ghost justify-start'
+              aria-label={label}
+              value={value}
+            />
+          </li>
+        ))}
       </ul>
     </div>
   )

@@ -10,7 +10,7 @@ function App() {
       <section className='flex  small-tablet:hidden w-full items-center justify-center  mx-auto py-7'>
         <Logo size={64} />
       </section>
-      <section className='w-full flex relative  overflow-hidden  items-center justify-center  mx-auto py-14'>
+      <section className='w-full flex relative items-center justify-center  mx-auto py-14'>
         <CountDown />
       </section>
     </>

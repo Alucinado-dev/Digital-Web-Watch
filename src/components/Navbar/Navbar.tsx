@@ -1,24 +1,30 @@
 import { FlagTriangleRight, NotebookPen, Timer, type LucideIcon } from 'lucide-react'
 
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 import LangToggle from '../LangToggle'
 import Logo from '../logo/Logo'
 import Navlink from '../Navlink/Navlink'
 import ThemeToggle from '../ThemeToggle'
 
+// Apenas para referência de tipo
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const ptTranslation = { nav: { timer: '', pomodoro: '', stopwatch: '' } }
+
 type allNavLinksTypes = {
   path: string
   Icon: LucideIcon
-  text: string
+  textKey: keyof (typeof ptTranslation)['nav']
 }
 
 const allNavLinks: allNavLinksTypes[] = [
-  { path: '/timer', Icon: Timer, text: 'Crônometro' },
-  { path: '/pomodoro', Icon: NotebookPen, text: 'Pomodoro' },
-  { path: '/stopwatch', Icon: FlagTriangleRight, text: 'Timer' },
+  { path: '/timer', Icon: Timer, textKey: 'timer' },
+  { path: '/pomodoro', Icon: NotebookPen, textKey: 'pomodoro' },
+  { path: '/stopwatch', Icon: FlagTriangleRight, textKey: 'stopwatch' },
 ]
 
 const Navbar = () => {
+  const { t } = useTranslation()
   return (
     <nav className='navbar w-full'>
       <div className='navbar-start small-tablet:min-w-[420px]'>
@@ -44,12 +50,12 @@ const Navbar = () => {
             tabIndex={-1}
             className='menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow'
           >
-            {allNavLinks.map(({ path, Icon, text }) => (
-              <li>
+            {allNavLinks.map(({ path, Icon, textKey }) => (
+              <li key={path}>
                 <Navlink asChild key={path}>
                   <Link to={path}>
                     <Icon size={24} />
-                    <span>{text}</span>
+                    <span>{t(`nav.${textKey}`)}</span>
                   </Link>
                 </Navlink>
               </li>
@@ -63,12 +69,12 @@ const Navbar = () => {
 
       <div className='navbar-center hidden lg:flex'>
         <ul className='menu menu-horizontal gap-2 px-1'>
-          {allNavLinks.map(({ path, Icon, text }) => (
-            <li>
+          {allNavLinks.map(({ path, Icon, textKey }) => (
+            <li key={path}>
               <Navlink asChild key={path}>
                 <Link to={path}>
                   <Icon size={24} />
-                  <span>{text}</span>
+                  <span>{t(`nav.${textKey}`)}</span>
                 </Link>
               </Navlink>
             </li>
