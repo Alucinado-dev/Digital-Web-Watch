@@ -1,5 +1,5 @@
-import en from '../assets/svg/en-us.svg'
-import pt from '../assets/svg/pt-br.svg'
+import en from '../assets/img/usa-flag-seeklogo.png'
+import pt from '../assets/img/bandeira-do-brasil-seeklogo.png'
 import { useLanguageStore } from '../stores/languageStore'
 
 type Language = {

@@ -1,4 +1,9 @@
 @custom-variant neon-dreams (&:where([data-theme=neon-dreams], [data-theme=neon-dreams] *));
+@custom-variant deep-ocean (&:where([data-theme=deep-ocean], [data-theme=deep-ocean] *));
+@custom-variant sakura-blossom (&:where([data-theme=sakura-blossom], [data-theme=sakura-blossom] *));
+@custom-variant mint-leaves (&:where([data-theme=mint-leaves], [data-theme=mint-leaves] *));
+@custom-variant dune-glow (&:where([data-theme=dune-glow], [data-theme=dune-glow] *));
+@custom-variant overcast (&:where([data-theme=overcast], [data-theme=overcast] *));
 [data-theme='neon-dreams'] {
   /* body */
   --body-bg-color-1: var(--color-shark-950);
@@ -37,6 +42,8 @@
   --countdown-color: var(--color-gold-500);
   --countdown-shadow: 0 4px 6px var(--color-aquamarine-600);
 }
+
+
 
 [data-theme='deep-ocean'] {
   --primary: var(--color-blue-500);

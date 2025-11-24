@@ -42,6 +42,7 @@ body {
   --breakpoint-tablet: 640px;
   --breakpoint-large-tablet: 768px;
   --breakpoint-laptop: 1024px;
-  --breakpoint-desktop: 1280px;
+  --breakpoint-large-laptop: 1280px;
+  --breakpoint-desktop: 1440px;
   --breakpoint-widescreen: 1920px;
 }

@@ -1,5 +1,7 @@
 {
   "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
   "highlight.regexes": {
     "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *TODO(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
       "filterFileRegex": ".*(?<!CHANGELOG.md)$",
@@ -67,7 +69,7 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "files.autoSave": "off",
+  "files.autoSave": "afterDelay",
   "window.restoreWindows": "none",
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
@@ -90,7 +92,7 @@
   "html.format.extraLiners": "head, body, /html, a",
   "cSpell.language": "pt-br,en",
   "editor.inlineSuggest.suppressSuggestions": true,
-  "workbench.colorTheme": "LaserWave",
+  "workbench.colorTheme": "Omni",
   "workbench.preferredDarkColorTheme": "2077",
   "synthwave84.brightness": 1,
   "code-runner.clearPreviousOutput": true,
