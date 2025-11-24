@@ -1,5 +1,5 @@
 import CountDown from './components/CountDown/CountDown'
-import Logo from './components/logo/Logo'
+import Logo from './components/Logo'
 
 import Header from './layout/header'
 

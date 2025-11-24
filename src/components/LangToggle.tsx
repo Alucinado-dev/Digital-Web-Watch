@@ -1,23 +1,23 @@
 import en from '../assets/img/usa-flag-seeklogo.png'
 import pt from '../assets/img/bandeira-do-brasil-seeklogo.png'
-import { useLanguageStore } from '../stores/languageStore'
+import { useLanguageStore, type Language } from '../stores/languageStore'
 
-type Language = {
-  id: 'pt' | 'en'
+type LangToggleTypes = {
+  id: Language
   label: string
   icon: string
 }
 
-const languages: Record<'pt' | 'en', Language> = {
-  pt: { id: 'pt', label: 'Português', icon: pt },
-  en: { id: 'en', label: 'English', icon: en },
+const languages: Record<'pt' | 'en', LangToggleTypes> = {
+  pt: { id: 'pt-BR', label: 'Português', icon: pt },
+  en: { id: 'en-US', label: 'English', icon: en },
 }
 
 const LangToggle = () => {
   const { language, setLanguage } = useLanguageStore()
 
   const handleToggleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newLang = e.target.checked ? 'en' : 'pt'
+    const newLang = e.target.checked ? 'en-US' : 'pt-BR'
     setLanguage(newLang)
   }
 
@@ -30,7 +30,7 @@ const LangToggle = () => {
       <input
         type='checkbox'
         className='toggle theme-controller'
-        checked={language === 'en'}
+        checked={language === 'en-US'}
         onChange={handleToggleChange}
       />
       <span className='label-text flex justify-center items-center p-1.5 gap-1'>

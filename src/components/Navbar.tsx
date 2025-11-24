@@ -2,10 +2,10 @@ import { FlagTriangleRight, NotebookPen, Timer, type LucideIcon } from 'lucide-r
 
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
-import LangToggle from '../LangToggle'
-import Logo from '../logo/Logo'
-import Navlink from '../Navlink/Navlink'
-import ThemeToggle from '../ThemeToggle'
+import LangToggle from './LangToggle'
+import Logo from './Logo'
+import Navlink from './Navlink'
+import ThemeToggle from './ThemeToggle'
 
 // Apenas para referência de tipo
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -1,18 +1,27 @@
 import { useTranslation } from 'react-i18next'
+import { useThemeStore, type Themes } from '../stores/themeStore'
 
-type Theme = {
+
+type ThemeToggleTypes = {
   label: string
-  value: string
+  value: Themes
 }
 
-const themes: Theme[] = [
-  { label: 'Default', value: 'default' },
-  { label: 'Retro', value: 'retro' },
-  { label: 'Cyberpunk', value: 'cyberpunk' },
-  { label: 'Valentine', value: 'valentine' },
-  { label: 'Aqua', value: 'aqua' },
+const themes: ThemeToggleTypes[] = [
+  {label : 'Neon Dreams', value: 'neon-dreams'},
+  {label: 'Deep Ocean', value: 'deep-ocean'},
+  {label: 'Sakura Blossom', value: 'sakura-blossom'},
+  {label: 'Mint Leaves', value: 'mint-leaves'},
+  {label: 'Dune Glow', value: 'dune-glow'},
+  {label: 'Overcast', value: 'overcast'}
 ]
 const ThemeToggle = () => {
+  const { theme, setTheme } = useThemeStore()
+
+  const handleThemeChange = (newTheme: Themes) => {
+    setTheme(newTheme)
+  }
+
   const { t } = useTranslation()
   return (
     <div className='dropdown  '>
@@ -38,8 +47,10 @@ const ThemeToggle = () => {
               type='radio'
               name='theme-dropdown'
               className='theme-controller w-full btn btn-sm btn-block btn-ghost justify-start'
+              checked={theme === value}
               aria-label={label}
               value={value}
+              onChange={() => handleThemeChange(value)}
             />
           </li>
         ))}
