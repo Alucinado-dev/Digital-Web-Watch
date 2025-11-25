@@ -7,6 +7,8 @@ import SubmitBtn from './components/SubmitBtn'
 
 import Header from './layout/header'
 import Cycles from './components/Cycles'
+import PlayBtn from './components/PlayBtn'
+import Footer from './layout/Footer'
 
 function App() {
   return (
@@ -31,6 +33,13 @@ function App() {
       <section className='w-full flex relative items-center justify-center  mx-auto py-6'>
         <SubmitBtn Icon={Paperclip} isDisabled={false} text='Enviar' />
       </section>
+
+      <section className='w-full gap-6 flex relative items-center justify-center  mx-auto py-6'>
+        <PlayBtn isPaused={true} />
+        <PlayBtn isPaused={false} />
+      </section>
+
+      <Footer/>
     </>
   )
 }
