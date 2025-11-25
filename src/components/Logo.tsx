@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'react'
-import logo from '../../assets/img/Digital Web Watch logo.png'
+import logo from '../assets/img/Digital Web Watch logo.png'
 
 type LogoProps = HTMLAttributes<HTMLElement> & {
   size: number

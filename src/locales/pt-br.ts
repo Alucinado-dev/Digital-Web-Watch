@@ -4,7 +4,7 @@ const pt = {
     pomodoro: 'Pomodoro',
     stopwatch: 'Timer',
   },
-  theme: 'Tema',
+  theme: 'Temas',
 }
 
 export default pt
