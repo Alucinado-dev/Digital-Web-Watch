@@ -12,7 +12,7 @@ const RotateGlowingBorder = ({ circleSize, children }: rotateGlowingBorderProps)
           width: `${circleSize + 15}px`,
           height: `${circleSize + 15}px`,
           background:
-            'conic-gradient(var(--countdown-border-1), var(--countdown-border-2), var(--countdown-border-3), var(--countdown-border-4))',
+            'linear-gradient(var(--countdown-border-1), var(--countdown-border-2), var(--countdown-border-3), var(--countdown-border-4))',
 
           animation: 'rotateBorder 5s linear infinite, glowBorder 5s linear infinite',
         }}

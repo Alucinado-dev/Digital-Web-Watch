@@ -1,4 +1,5 @@
 import CountDown from './components/CountDown'
+import Cycles from './components/cycles'
 import Input from './components/input'
 import Logo from './components/Logo'
 
@@ -17,8 +18,11 @@ function App() {
       </section>
 
       <section className='w-full flex relative items-center justify-center  mx-auto py-6'>
-        
         <Input label='nome da tarefa' />
+      </section>
+
+      <section>
+        <Cycles/>
       </section>
     </>
   )

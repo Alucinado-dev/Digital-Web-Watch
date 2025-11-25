@@ -35,12 +35,17 @@
   /* Countdown */
   --countdown-bg: var(--color-shark-950);
   --countdown-border-1: var(--color-rose-500);
-  --countdown-border-2: var(--color-seagull-400);
-  --countdown-border-3: var(--color-gold-500);
-  --countdown-border-4: var(--color-purple-heart-800);
+  --countdown-border-2: var(--color-rose-500);
+  --countdown-border-3: var(--color-seagull-400);
+  --countdown-border-4: var(--color-seagull-400);
 
   --countdown-color: var(--color-gold-500);
   --countdown-shadow: 0 4px 6px var(--color-aquamarine-600);
+
+  --pomodoro-cycleDot-workTime: var(--color-seagull-400);
+  --pomodoro-cycleDot-shortBreak: var(--color-gold-500);
+  --pomodoro-cycleDot-longBreak: var(--color-rose-500);
+
 }
 
 
