@@ -14,7 +14,14 @@ const SubmitBtn = ({Icon, isDisabled, text , ...rest}: SubmitBtnProps) => {
     const { t }= useTranslation()
 
     return (
-      <button className='btn flex justify-center items-center gap-2 py-1.5 px-2.5' disabled={isDisabled} aria-disabled={isDisabled}  {...rest}>
+      <button
+        className='btn btn-outline rounded-2xl text-2xl h-auto  flex justify-center items-center gap-2 py-4 px-5'
+        disabled={isDisabled}
+        aria-disabled={isDisabled}
+        type='submit'
+        title={text}
+        {...rest}
+      >
         {isDisabled ? (
           <>
             <span className='loading loading-spinner'></span>
@@ -22,7 +29,7 @@ const SubmitBtn = ({Icon, isDisabled, text , ...rest}: SubmitBtnProps) => {
           </>
         ) : (
           <>
-            <Icon size={32} />
+            <Icon size={28} />
             <span> {text} </span>
           </>
         )}

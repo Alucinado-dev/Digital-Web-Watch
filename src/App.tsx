@@ -1,4 +1,4 @@
-import { PlaySquareIcon } from 'lucide-react'
+import { Paperclip } from 'lucide-react'
 import CountDown from './components/CountDown'
 
 import Input from './components/input'
@@ -20,7 +20,7 @@ function App() {
         <CountDown />
       </section>
 
-      <section className='w-full flex relative items-center justify-center  mx-auto py-6'>
+      <section className='w-full flex relative items-center justify-center   mx-auto py-6'>
         <Input label='nome da tarefa' />
       </section>
 
@@ -29,7 +29,7 @@ function App() {
       </section>
 
       <section className='w-full flex relative items-center justify-center  mx-auto py-6'>
-        <SubmitBtn Icon={PlaySquareIcon} isDisabled={false} text='Enviar' />
+        <SubmitBtn Icon={Paperclip} isDisabled={false} text='Enviar' />
       </section>
     </>
   )
