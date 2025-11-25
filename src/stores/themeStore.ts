@@ -24,7 +24,7 @@ export const useThemeStore = create(
       },
     }),
     {
-      name: 'theme-storage', // Chave no localStorage
+      name: 'theme-storage',
       onRehydrateStorage: () => state => {
         state?.setTheme(state.theme)
       },

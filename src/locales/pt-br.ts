@@ -5,6 +5,10 @@ const pt = {
     stopwatch: 'Timer',
   },
   theme: 'Temas',
+  submitBtn: {
+    loading: 'Carregando...',
+    submit: 'Confirmar'
+  },
 }
 
 export default pt

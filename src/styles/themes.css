@@ -42,6 +42,7 @@
   --countdown-color: var(--color-gold-500);
   --countdown-shadow: 0 4px 6px var(--color-aquamarine-600);
 
+  /* Cycle */
   --pomodoro-cycleDot-workTime: var(--color-seagull-400);
   --pomodoro-cycleDot-shortBreak: var(--color-gold-500);
   --pomodoro-cycleDot-longBreak: var(--color-rose-500);

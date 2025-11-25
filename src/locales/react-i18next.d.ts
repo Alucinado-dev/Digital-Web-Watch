@@ -1,5 +1,6 @@
 import 'react-i18next'
-import pt from './locales/pt/translation'
+import type pt from './pt-br'
+
 
 declare module 'react-i18next' {
   interface CustomTypeOptions {

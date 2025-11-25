@@ -1,9 +1,12 @@
+import { PlaySquareIcon } from 'lucide-react'
 import CountDown from './components/CountDown'
-import Cycles from './components/cycles'
+
 import Input from './components/input'
 import Logo from './components/Logo'
+import SubmitBtn from './components/SubmitBtn'
 
 import Header from './layout/header'
+import Cycles from './components/Cycles'
 
 function App() {
   return (
@@ -22,7 +25,11 @@ function App() {
       </section>
 
       <section>
-        <Cycles/>
+        <Cycles />
+      </section>
+
+      <section className='w-full flex relative items-center justify-center  mx-auto py-6'>
+        <SubmitBtn Icon={PlaySquareIcon} isDisabled={false} text='Enviar' />
       </section>
     </>
   )
