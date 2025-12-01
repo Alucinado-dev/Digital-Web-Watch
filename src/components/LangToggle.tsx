@@ -1,6 +1,8 @@
-import en from '../assets/img/usa-flag-seeklogo.png'
 import pt from '../assets/img/bandeira-do-brasil-seeklogo.png'
+import en from '../assets/img/usa-flag-seeklogo.png'
 import { useLanguageStore, type Language } from '../stores/languageStore'
+
+type LangToggleProps = React.HTMLAttributes<HTMLLabelElement>
 
 type LangToggleTypes = {
   id: Language
@@ -13,7 +15,7 @@ const languages: Record<'pt' | 'en', LangToggleTypes> = {
   en: { id: 'en-US', label: 'English', icon: en },
 }
 
-const LangToggle = () => {
+const LangToggle = ({ ...props }: LangToggleProps) => {
   const { language, setLanguage } = useLanguageStore()
 
   const handleToggleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,10 +24,9 @@ const LangToggle = () => {
   }
 
   return (
-    <label className='hidden  large-tablet:flex cursor-pointer p-2 justify-center items-center gap-2'>
+    <label {...props}>
       <span className='label-text flex justify-center items-center p-1.5 gap-1'>
-        <img src={languages.pt.icon} className='w-8 h-8' alt={`Bandeira ${languages.pt.label}`} />
-        {languages.pt.label}
+        <img src={languages.pt.icon} className='w-9 h-6' alt={`Bandeira ${languages.pt.label}`} />
       </span>
       <input
         type='checkbox'
@@ -34,8 +35,7 @@ const LangToggle = () => {
         onChange={handleToggleChange}
       />
       <span className='label-text flex justify-center items-center p-1.5 gap-1'>
-        {languages.en.label}
-        <img src={languages.en.icon} className='w-8 h-8' alt={`Flag ${languages.en.label}`} />
+        <img src={languages.en.icon} className='w-9 h-6' alt={`Flag ${languages.en.label}`} />
       </span>
     </label>
   )

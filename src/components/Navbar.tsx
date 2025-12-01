@@ -49,6 +49,7 @@ const Navbar = () => {
           <ul
             tabIndex={-1}
             className='menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow'
+            style={{ gap: '12px' }}
           >
             {allNavLinks.map(({ path, Icon, textKey }) => (
               <li key={path}>
@@ -60,6 +61,12 @@ const Navbar = () => {
                 </Navlink>
               </li>
             ))}
+
+            <li className='large-tablet:hidden flex justify-center items-center'>
+              <Navlink asChild key='lang'>
+                <LangToggle className='flex cursor-pointer p-2 justify-center items-center gap-2 ' />
+              </Navlink>
+            </li>
           </ul>
         </div>
         <a className='hidden  small-tablet:flex'>
@@ -68,7 +75,7 @@ const Navbar = () => {
       </div>
 
       <div className='navbar-center hidden lg:flex'>
-        <ul className='menu menu-horizontal gap-2 px-1'>
+        <ul className='menu menu-horizontal px-1'>
           {allNavLinks.map(({ path, Icon, textKey }) => (
             <li key={path}>
               <Navlink asChild key={path}>
@@ -81,8 +88,8 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
-      <div className='navbar-end flex flex-col-reverse items-end justify-center md:justify-center md:items-center md:flex-row'>
-        <LangToggle />
+      <div className='navbar-end flex flex-col-reverse items-end justify-center md:justify-end md:items-center md:flex-row'>
+        <LangToggle className='hidden  large-tablet:flex cursor-pointer p-2 justify-center items-center gap-2' />
         <ThemeToggle />
       </div>
     </nav>
