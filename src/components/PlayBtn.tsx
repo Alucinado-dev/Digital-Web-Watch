@@ -9,7 +9,12 @@ const PlayBtn = ({ isPaused = true, ...rest }: PlayBtnProps) => {
   const variants = isPaused ? 'btn btn-success' : 'btn btn-error'
 
   return (
-    <button className={variants} {...rest} aria-label={isPaused ? 'Play' : 'Pause'}>
+    <button
+      className={variants}
+      {...rest}
+      aria-label={isPaused ? 'Play' : 'Pause'}
+      title={isPaused ? 'Play' : 'Pause'}
+    >
       {isPaused ? <Play /> : <Pause />}
     </button>
   )

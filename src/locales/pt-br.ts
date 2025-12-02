@@ -4,7 +4,14 @@ const pt = {
     pomodoro: 'Pomodoro',
     stopwatch: 'Crônometro',
   },
-  theme: 'Temas',
+  theme: {
+    themeTrigger: 'Temas',
+    themeTriggerTitle: 'Selecione um tema para a página',
+  },
+  lang: {
+    pt: '',
+    en: '',
+  },
   submitBtn: {
     loading: 'Carregando...',
     submit: 'Confirmar',

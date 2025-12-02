@@ -1,19 +1,18 @@
 import { useTranslation } from 'react-i18next'
 import { useThemeStore, type Themes } from '../stores/themeStore'
 
-
 type ThemeToggleTypes = {
   label: string
   value: Themes
 }
 
 const themes: ThemeToggleTypes[] = [
-  {label : 'Neon Dreams', value: 'neon-dreams'},
-  {label: 'Deep Ocean', value: 'deep-ocean'},
-  {label: 'Sakura Blossom', value: 'sakura-blossom'},
-  {label: 'Mint Leaves', value: 'mint-leaves'},
-  {label: 'Dune Glow', value: 'dune-glow'},
-  {label: 'Overcast', value: 'overcast'}
+  { label: 'Neon Dreams', value: 'neon-dreams' },
+  { label: 'Deep Ocean', value: 'deep-ocean' },
+  { label: 'Sakura Blossom', value: 'sakura-blossom' },
+  { label: 'Mint Leaves', value: 'mint-leaves' },
+  { label: 'Dune Glow', value: 'dune-glow' },
+  { label: 'Overcast', value: 'overcast' },
 ]
 const ThemeToggle = () => {
   const { theme, setTheme } = useThemeStore()
@@ -24,9 +23,9 @@ const ThemeToggle = () => {
 
   const { t } = useTranslation()
   return (
-    <div className='dropdown  '>
+    <div className='dropdown' aria-label={t('themeTriggerTitle')} title={t('themeTrigger')}>
       <div tabIndex={0} role='button' className='btn m-1'>
-        {t('theme')}
+        {t('themeTrigger')}
         <svg
           width='12px'
           height='12px'

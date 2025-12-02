@@ -11,8 +11,8 @@ type LangToggleTypes = {
 }
 
 const languages: Record<'pt' | 'en', LangToggleTypes> = {
-  pt: { id: 'pt-BR', label: 'Português', icon: pt },
-  en: { id: 'en-US', label: 'English', icon: en },
+  pt: { id: 'pt-BR', label: 'Selecione a Linguagem Português do Brasil', icon: pt },
+  en: { id: 'en-US', label: 'Select Language English', icon: en },
 }
 
 const LangToggle = ({ ...props }: LangToggleProps) => {
@@ -26,7 +26,7 @@ const LangToggle = ({ ...props }: LangToggleProps) => {
   return (
     <label {...props}>
       <span className='label-text flex justify-center items-center p-1.5 gap-1'>
-        <img src={languages.pt.icon} className='w-9 h-6' alt={`Bandeira ${languages.pt.label}`} />
+        <img src={languages.pt.icon} className='w-9 h-6' alt={languages.pt.label} />
       </span>
       <input
         type='checkbox'
@@ -35,7 +35,7 @@ const LangToggle = ({ ...props }: LangToggleProps) => {
         onChange={handleToggleChange}
       />
       <span className='label-text flex justify-center items-center p-1.5 gap-1'>
-        <img src={languages.en.icon} className='w-9 h-6' alt={`Flag ${languages.en.label}`} />
+        <img src={languages.en.icon} className='w-9 h-6' alt={languages.en.label} />
       </span>
     </label>
   )
