@@ -1,13 +1,13 @@
 const pt = {
   nav: {
-    timer: 'Crônometro',
+    timer: 'Temporizador',
     pomodoro: 'Pomodoro',
-    stopwatch: 'Timer',
+    stopwatch: 'Crônometro',
   },
   theme: 'Temas',
   submitBtn: {
     loading: 'Carregando...',
-    submit: 'Confirmar'
+    submit: 'Confirmar',
   },
 }
 

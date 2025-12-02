@@ -54,7 +54,7 @@ const Navbar = () => {
             {allNavLinks.map(({ path, Icon, textKey }) => (
               <li key={path}>
                 <Navlink asChild key={path}>
-                  <Link to={path}>
+                  <Link to={path} title={`nav.${textKey}`} aria-label={`nav.${textKey}`}>
                     <Icon size={24} />
                     <span>{t(`nav.${textKey}`)}</span>
                   </Link>
@@ -79,7 +79,7 @@ const Navbar = () => {
           {allNavLinks.map(({ path, Icon, textKey }) => (
             <li key={path}>
               <Navlink asChild key={path}>
-                <Link to={path}>
+                <Link to={path} title={`nav.${textKey}`} aria-label={`nav.${textKey}`}>
                   <Icon size={24} />
                   <span>{t(`nav.${textKey}`)}</span>
                 </Link>
