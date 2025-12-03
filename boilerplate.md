@@ -2,33 +2,29 @@
 
 ## Instalações de coisas com react
 
-### Criar projeto react + Vite  
+### Criar projeto react + Vite
 
-npx  create-vite@latest no arquivo onde ficam todos os projetos de programação
-     *entrar no arquivo criado
-npm install
-npm run dev
+npx create-vite@latest no arquivo onde ficam todos os projetos de programação \*entrar no arquivo
+criado npm install npm run dev
 
 ### configurações do GIT
 
-git config core.eol lf
-git config core.autocrlf input
+git config core.eol lf git config core.autocrlf input
 
 ### instalar Dependencias de Dev
 
-npm install --save-dev prettier eslint-config-prettier typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-simple-import-sort
+npm install --save-dev prettier eslint-config-prettier typescript @typescript-eslint/parser
+@typescript-eslint/eslint-plugin eslint-plugin-simple-import-sort
 
 ### instalar FontAwesome
 
-npm install --save @fortawesome/fontawesome-svg-core
-npm install --save @awesome.me/kit-db1c54e319
+npm install --save @fortawesome/fontawesome-svg-core npm install --save @awesome.me/kit-db1c54e319
 npm install --save @fortawesome/react-fontawesome@latest
 
-### instalar  Tailwind
+### instalar Tailwind
 
-npm install tailwindcss @tailwindcss/vite
-no vite.config adicionar tailwindcss()
-no index.css adicionar `@import 'tailwindcss'`
+npm install tailwindcss @tailwindcss/vite no vite.config adicionar tailwindcss() no index.css
+adicionar `@import 'tailwindcss'`
 
 ### instalar Lucide Icons
 
@@ -36,32 +32,28 @@ npm install lucide-react
 
 ### instalar UID (gerador de ID)
 
-npm install uuid
-import { v4 as idGenerator } from 'uuid';
+npm install uuid import { v4 as idGenerator } from 'uuid';
+
+### instalar useHooks (novos hooks gerais)
+
+npm i @uidotdev/usehooks
 
 ### instalar reacts router
 
 npm i react-router
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router";
+import { createBrowserRouter, RouterProvider, } from "react-router";
 
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from "react"; import ReactDOM from "react-dom/client";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    <!-- element: <div>Hello World</div>, -->
-  },
-]);
+const router = createBrowserRouter([ { path: "/", <!-- element: <div>Hello World</div>, --> }, ]);
 
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
+
   <!-- <RouterProvider router={router} /> -->
+
 );
 
 ## no HTML
