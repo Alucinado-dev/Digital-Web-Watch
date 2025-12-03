@@ -69,7 +69,7 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "files.autoSave": "off",
+  "files.autoSave": "afterDelay",
   "window.restoreWindows": "none",
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
