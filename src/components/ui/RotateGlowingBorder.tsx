@@ -17,12 +17,7 @@ const RotateGlowingBorder = ({ circleSize, children }: rotateGlowingBorderProps)
           animation: 'rotateBorder 5s linear infinite, glowBorder 5s linear infinite',
         }}
       ></div>
-      <div
-        className='relative z-20 flex items-center justify-center rounded-full bg-(--countdown-bg) p-16'
-        style={{ width: `${circleSize}px`, height: `${circleSize}px` }}
-      >
-        {children}
-      </div>
+      {children}
     </>
   )
 }

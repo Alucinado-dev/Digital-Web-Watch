@@ -38,6 +38,12 @@ npm install uuid import { v4 as idGenerator } from 'uuid';
 
 npm i @uidotdev/usehooks
 
+### instalar react hook form
+
+npm install react-hook-form
+
+npm install zod
+
 ### instalar reacts router
 
 npm i react-router

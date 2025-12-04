@@ -15,7 +15,9 @@ dist-ssr
 boilerplate.md
 
 # Editor directories and files
+.gemini
 
+settings.json
 .idea
 .DS_Store
 *.suo
