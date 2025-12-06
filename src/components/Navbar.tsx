@@ -1,11 +1,12 @@
 import { FlagTriangleRight, NotebookPen, Timer, type LucideIcon } from 'lucide-react'
 
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router'
+
 import LangToggle from './LangToggle'
 import Logo from './Logo'
-import Navlink from './Navlink'
 import ThemeToggle from './ThemeToggle'
+import NavbarItem from './Navlink'
+import { NavLink } from 'react-router-dom'
 
 // Apenas para referência de tipo
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -18,8 +19,8 @@ type allNavLinksTypes = {
 }
 
 const allNavLinks: allNavLinksTypes[] = [
+  { path: '/', Icon: NotebookPen, textKey: 'pomodoro' },
   { path: '/timer', Icon: Timer, textKey: 'timer' },
-  { path: '/pomodoro', Icon: NotebookPen, textKey: 'pomodoro' },
   { path: '/stopwatch', Icon: FlagTriangleRight, textKey: 'stopwatch' },
 ]
 
@@ -53,19 +54,19 @@ const Navbar = () => {
           >
             {allNavLinks.map(({ path, Icon, textKey }) => (
               <li key={path}>
-                <Navlink asChild key={path}>
-                  <Link to={path} title={`nav.${textKey}`} aria-label={`nav.${textKey}`}>
+                <NavbarItem asChild key={path}>
+                  <NavLink to={path} title={`nav.${textKey}`} aria-label={`nav.${textKey}`}>
                     <Icon size={24} />
                     <span>{t(`nav.${textKey}`)}</span>
-                  </Link>
-                </Navlink>
+                  </NavLink>
+                </NavbarItem>
               </li>
             ))}
 
             <li className='large-tablet:hidden flex justify-center items-center'>
-              <Navlink asChild key='lang'>
+              <NavbarItem asChild key='lang'>
                 <LangToggle className='flex cursor-pointer p-2 justify-center items-center gap-2 ' />
-              </Navlink>
+              </NavbarItem>
             </li>
           </ul>
         </div>
@@ -78,12 +79,12 @@ const Navbar = () => {
         <ul className='menu menu-horizontal px-1'>
           {allNavLinks.map(({ path, Icon, textKey }) => (
             <li key={path}>
-              <Navlink asChild key={path}>
-                <Link to={path} title={`nav.${textKey}`} aria-label={`nav.${textKey}`}>
+              <NavbarItem asChild key={path}>
+                <NavLink to={path} title={`nav.${textKey}`} aria-label={`nav.${textKey}`}>
                   <Icon size={24} />
                   <span>{t(`nav.${textKey}`)}</span>
-                </Link>
-              </Navlink>
+                </NavLink>
+              </NavbarItem>
             </li>
           ))}
         </ul>
