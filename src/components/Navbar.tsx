@@ -2,9 +2,9 @@ import { FlagTriangleRight, NotebookPen, Timer, type LucideIcon } from 'lucide-r
 
 import { useTranslation } from 'react-i18next'
 
-import LangToggle from './LangToggle'
+import LangToggle from '../features/LangToggle'
 import Logo from './Logo'
-import ThemeToggle from './ThemeToggle'
+import ThemeToggle from '../features/ThemeToggle'
 import NavbarItem from './Navlink'
 import { NavLink } from 'react-router-dom'
 

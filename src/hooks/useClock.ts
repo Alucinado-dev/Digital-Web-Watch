@@ -69,10 +69,11 @@ const tick = useCallback(() => {
     setRunning(false)
     if (intervalRef.current) clearInterval(intervalRef.current)
   }
-  const reset = () => {
+  const reset = (newTime?: number) => {
     pause()
-    setTime(startTime)
-    if (persistKey) localStorage.setItem(persistKey, String(startTime))
+    const timeToSet = newTime !== undefined ? newTime : startTime
+    setTime(timeToSet)
+    if (persistKey) localStorage.setItem(persistKey, String(timeToSet))
   }
 
   return { time, start, pause, reset, isRunning: running }

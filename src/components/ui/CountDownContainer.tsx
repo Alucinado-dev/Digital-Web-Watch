@@ -23,10 +23,8 @@ const CountDownContainer = ({
         className='relative z-20 flex items-center justify-center rounded-full bg-(--countdown-bg) p-16'
         style={{ width: `${countDownContainerSize}px`, height: `${countDownContainerSize}px` }}
       >
-        <span className='text-center text-5xl font-bold text-(--countdown-color) [font-family:var(--countdown-font)] text-shadow-(--countdown-shadow)'>
-          00:00
+
           {children}
-        </span>
       </div>
     </RotateGlowingBorder>
   )

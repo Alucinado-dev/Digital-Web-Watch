@@ -1,9 +1,11 @@
+import type { CycleVariant } from "../stores/pomodoroStore"
 
-type WorkflowVariant =  'workTime' | 'shortBreak' | 'longBreak'
+
+
 
 
 type CycleDotProp = {
-  variant: WorkflowVariant
+  variant: CycleVariant
 }
 
 
@@ -19,4 +21,4 @@ const CycleDot = ({variant}: CycleDotProp) => {
 }
 
 export default CycleDot
-export type {WorkflowVariant}
+
