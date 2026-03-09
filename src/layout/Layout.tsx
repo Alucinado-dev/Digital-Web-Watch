@@ -2,9 +2,12 @@
 import { Outlet } from 'react-router-dom'
 import Footer from './Footer'
 import Header from './Header'
+import { useTranslation } from 'react-i18next'
 
 
 const Layout = () => {
+
+  const { t } = useTranslation()
 
 
   return (
@@ -15,7 +18,7 @@ const Layout = () => {
         <Outlet/>
       </main>
 
-      <Footer />
+      <Footer  text={t('footerText')}/>
     </div>
   )
 }

@@ -16,6 +16,8 @@ const pt = {
     loading: 'Carregando...',
     submit: 'Confirmar',
   },
+
+  footerText: 'Desenvolvido por '
 }
 
 export default pt

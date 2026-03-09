@@ -23,9 +23,13 @@ const ThemeToggle = () => {
 
   const { t } = useTranslation()
   return (
-    <div className='dropdown' aria-label={t('themeTriggerTitle')} title={t('themeTrigger')}>
+    <div
+      className='dropdown'
+      aria-label={t('theme.themeTriggerTitle')}
+      title={t('theme.themeTriggerTitle')}
+    >
       <div tabIndex={0} role='button' className='btn m-1'>
-        {t('themeTrigger')}
+        {t('theme.themeTrigger')}
         <svg
           width='12px'
           height='12px'

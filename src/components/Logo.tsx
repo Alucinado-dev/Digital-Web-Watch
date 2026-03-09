@@ -7,8 +7,8 @@ type LogoProps = HTMLAttributes<HTMLElement> & {
 
 const Logo = ({ size, ...props }: LogoProps) => {
   return (
-    <div className='items-center flex w-full justify-center cursor-pointer'>
-      <figure {...props} style={{ width: `${size}px`, height: `${size}px` }}>
+    <div className='items-center flex w-full justify-center cursor-pointer '>
+      <figure {...props} style={{ width: `${size}px`, height: `${size}px` }} className='hidden'>
         <img
           className='w-full h-full object-center object-cover'
           src={logo}

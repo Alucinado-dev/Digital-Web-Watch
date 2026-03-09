@@ -8,7 +8,7 @@ type ResetBtnProps = ButtonHTMLAttributes<HTMLButtonElement>
 const NextBtn = (props : ResetBtnProps) =>{
 
     return(
-        <button className="btn btn-warning" {...props}>
+        <button title="reset" className="btn btn-warning" {...props}>
             <TimerReset />
         </button>
     )

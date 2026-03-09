@@ -2,33 +2,29 @@ import { FlagTriangleRight, NotebookPen, Timer, type LucideIcon } from 'lucide-r
 
 import { useTranslation } from 'react-i18next'
 
+import { NavLink } from 'react-router-dom'
 import LangToggle from '../features/LangToggle'
-import Logo from './Logo'
 import ThemeToggle from '../features/ThemeToggle'
 import NavbarItem from './Navlink'
-import { NavLink } from 'react-router-dom'
-
-// Apenas para referência de tipo
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const ptTranslation = { nav: { timer: '', pomodoro: '', stopwatch: '' } }
 
 type allNavLinksTypes = {
   path: string
   Icon: LucideIcon
-  textKey: keyof (typeof ptTranslation)['nav']
+  textKey: string
 }
-
-const allNavLinks: allNavLinksTypes[] = [
-  { path: '/', Icon: NotebookPen, textKey: 'pomodoro' },
-  { path: '/timer', Icon: Timer, textKey: 'timer' },
-  { path: '/stopwatch', Icon: FlagTriangleRight, textKey: 'stopwatch' },
-]
 
 const Navbar = () => {
   const { t } = useTranslation()
+
+  const allNavLinks: allNavLinksTypes[] = [
+    { path: '/', Icon: NotebookPen, textKey: t('nav.pomodoro') },
+    { path: '/timer', Icon: Timer, textKey: t('nav.timer') },
+    { path: '/stopwatch', Icon: FlagTriangleRight, textKey: t('nav.stopwatch') },
+  ]
+
   return (
     <nav className='navbar w-full'>
-      <div className='navbar-start small-tablet:min-w-[420px]'>
+      <div className='navbar-start '>
         <div className='dropdown'>
           <div tabIndex={0} role='button' className='btn btn-ghost lg:hidden'>
             <svg
@@ -49,15 +45,15 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={-1}
-            className='menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow'
+            className='menu menu-sm dropdown-content gap-4 bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow'
             style={{ gap: '12px' }}
           >
             {allNavLinks.map(({ path, Icon, textKey }) => (
               <li key={path}>
                 <NavbarItem asChild key={path}>
-                  <NavLink to={path} title={`nav.${textKey}`} aria-label={`nav.${textKey}`}>
+                  <NavLink to={path} title={textKey} aria-label={textKey}>
                     <Icon size={24} />
-                    <span>{t(`nav.${textKey}`)}</span>
+                    <span>{textKey}</span>
                   </NavLink>
                 </NavbarItem>
               </li>
@@ -70,19 +66,17 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className='hidden  small-tablet:flex'>
-          <Logo size={48} />
-        </a>
+        <LangToggle className='hidden  large-tablet:flex cursor-pointer p-2 justify-center items-center gap-2' />
       </div>
 
       <div className='navbar-center hidden lg:flex'>
-        <ul className='menu menu-horizontal px-1'>
+        <ul className='menu menu-horizontal gap-7 px-1'>
           {allNavLinks.map(({ path, Icon, textKey }) => (
             <li key={path}>
               <NavbarItem asChild key={path}>
-                <NavLink to={path} title={`nav.${textKey}`} aria-label={`nav.${textKey}`}>
+                <NavLink to={path} title={textKey} aria-label={textKey}>
                   <Icon size={24} />
-                  <span>{t(`nav.${textKey}`)}</span>
+                  <span>{textKey}</span>
                 </NavLink>
               </NavbarItem>
             </li>
@@ -90,7 +84,6 @@ const Navbar = () => {
         </ul>
       </div>
       <div className='navbar-end flex flex-col-reverse items-end justify-center md:justify-end md:items-center md:flex-row'>
-        <LangToggle className='hidden  large-tablet:flex cursor-pointer p-2 justify-center items-center gap-2' />
         <ThemeToggle />
       </div>
     </nav>

@@ -85,6 +85,8 @@
     "*.sdb": "${capture}.${extname}-*",
     "*.s3db": "${capture}.${extname}-*"
   },
+  "explorer.compactFolders": false,
+
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "liveServer.settings.donotShowInfoMsg": true,
