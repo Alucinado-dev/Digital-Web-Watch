@@ -12,12 +12,22 @@ const pt = {
     pt: '',
     en: '',
   },
-  submitBtn: {
-    loading: 'Carregando...',
-    submit: 'Confirmar',
+
+  settings: {
+    title: 'Configurações',
+    close: 'Fechar',
+    pomodoro: 'Pomodoro',
+    workTime: 'Tempo de foco',
+    shortBreak: 'Pausa curta',
+    longBreak: 'Pausa Longa',
+    timer: 'Temporizador',
+    duration: 'Duração do temporizador',
+    reset: 'Resetar',
+    save: 'Salvar',
+    ariaLabel: 'Abrir Configurações'
   },
 
-  footerText: 'Desenvolvido por '
+  footerText: 'Desenvolvido por ',
 }
 
 export default pt

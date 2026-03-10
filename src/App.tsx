@@ -16,7 +16,7 @@ function App() {
         <Route path='stopwatch' element={<StopwatchPage />} />
         <Route path='timer' element={<TimerPage />} />
 
-        {/* Rota para qualquer outro caminho não definido */}
+
         <Route path='*' element={<NotFoundPage />} />
       </Route>
     </Routes>

@@ -1,52 +1,105 @@
-import { create } from "zustand"
+import { create } from 'zustand'
 
 type WorkStateVariant = 'workTime' | 'shortBreak' | 'longBreak'
 
-/**
- * Função auxiliar que gera um workflow dinamicamente.
- * @param cycles - O número de sessões de trabalho antes de um descanso longo.
- * @returns Um array de ciclos (WorkStateVariant[]).
- */
-
 const generateWorkFlow = (cycles: number): WorkStateVariant[] => {
   const workflow: WorkStateVariant[] = []
-
   for (let i = 0; i < cycles; i++) {
     workflow.push('workTime')
-
-    if (i < cycles - 1) {
-      workflow.push('shortBreak')
-    }
+    if (i < cycles - 1) workflow.push('shortBreak')
   }
-
   workflow.push('longBreak')
   return workflow
 }
 
+type Durations = {
+  workTime: number
+  shortBreak: number
+  longBreak: number
+}
+
 type PomodoroState = {
   config: {
-    duration: {
-      workTime: number
-      shortBreak: number
-      longBreak: number
-    }
+    duration: Durations
     cyclesUntilSessionEnds: number
   }
-
-  // --- ESTADO GERADO ---
-  workflow: WorkStateVariant[] // O workflow é gerado com base nas instruções da confgi.
-
-  // --- ESTADO ATUAL ---
+  workflow: WorkStateVariant[]
   SessionIndex: number
   completedWorkSessions: number
 
-  // --- AÇÕES ---
-  actions:{
-    setCyclesUntilSessionEnds: (cycles:number) => void
+  actions: {
+    setCyclesUntilSessionEnds: (cycles: number) => void
+    // Nova action — chamada pelo SettingsModal ao salvar
+    setDurations: (durations: Durations) => void
     advanceToNextWorkState: () => void
     resetSequence: () => void
   }
 }
+
+const usePomodoroStore = create<PomodoroState>(set => ({
+  config: {
+    duration: {
+      workTime: 25 * 60, 
+      shortBreak: 5 * 60,
+      longBreak: 15 * 60,
+    },
+    cyclesUntilSessionEnds: 4,
+  },
+  workflow: generateWorkFlow(4),
+  SessionIndex: 0,
+  completedWorkSessions: 0,
+
+  actions: {
+    setCyclesUntilSessionEnds: (cycles: number) => {
+      const newWorkflow = generateWorkFlow(cycles)
+      set(state => ({
+        config: { ...state.config, cyclesUntilSessionEnds: cycles },
+        workflow: newWorkflow,
+        SessionIndex: 0,
+        completedWorkSessions: 0,
+      }))
+    },
+
+
+    setDurations: (durations: Durations) =>
+      set(state => ({
+        config: {
+          ...state.config,
+          duration: {
+            workTime: durations.workTime / 1000,
+            shortBreak: durations.shortBreak / 1000,
+            longBreak: durations.longBreak / 1000,
+          },
+        },
+        // Reseta o índice para o novo ciclo começar do zero com os novos tempos
+        SessionIndex: 0,
+        completedWorkSessions: 0,
+      })),
+
+    advanceToNextWorkState: () =>
+      set(state => {
+        const currentWorkState = state.workflow[state.SessionIndex]
+        const wasWorkSession = currentWorkState === 'workTime'
+        const nextIndex = (state.SessionIndex + 1) % state.workflow.length
+        return {
+          SessionIndex: nextIndex,
+          completedWorkSessions:
+            wasWorkSession ? state.completedWorkSessions + 1 : state.completedWorkSessions,
+        }
+      }),
+
+    resetSequence: () =>
+      set(state => ({
+        workflow: generateWorkFlow(state.config.cyclesUntilSessionEnds),
+        SessionIndex: 0,
+        completedWorkSessions: 0,
+      })),
+  },
+}))
+
+export default usePomodoroStore
+export type { WorkStateVariant }
+
 
 /* conceitos:
 
@@ -58,62 +111,3 @@ type PomodoroState = {
 
   Workflow: fluxo total de workstates
 */
-
-const usePomodoroStore = create<PomodoroState>(set => ({
-  // ---VALORES INICIAIS ---
-  config: {
-    duration: {
-      workTime: 70 * 60,
-      shortBreak: 5 * 60,
-      longBreak: 15 * 60,
-    },
-    cyclesUntilSessionEnds: 4,
-  },
-
-  workflow: generateWorkFlow(4),
-  SessionIndex: 0,
-  completedWorkSessions: 0,
-
-  actions: {
-    setCyclesUntilSessionEnds: (cycles: number) => {
-      // Cria o novo workflow
-      const newWorkflow = generateWorkFlow(cycles)
-      set(state => ({
-        // Atualiza a configuração
-        config: { ...state.config, cyclesUntilSessionEnds: cycles },
-        // Substitui o workflow antigo pelo novo
-        workflow: newWorkflow,
-        // Reseta o estado do ciclo para começar do início
-        SessionIndex: 0,
-        completedWorkSessions: 0,
-      }))
-    },
-
-    advanceToNextWorkState: () =>
-      set(state => {
-        const currentWorkState = state.workflow[state.SessionIndex]
-        const wasWorkSession = currentWorkState === 'workTime'
-        const nextIndex = (state.SessionIndex + 1) % state.workflow.length
-
-        return {
-          SessionIndex: nextIndex,
-          completedWorkSessions: wasWorkSession ? state.completedWorkSessions + 1 : state.completedWorkSessions,
-        }
-      }),
-
-    resetSequence: () =>
-      set(state => ({
-        // Ao resetar, também garantimos que o workflow está em sincronia com a config.
-        workflow: generateWorkFlow(state.config.cyclesUntilSessionEnds),
-        SessionIndex: 0,
-        completedWorkSessions: 0,
-      })),
-  },
-}))
-
-
-export default usePomodoroStore
-
-export type { WorkStateVariant }
-
-
