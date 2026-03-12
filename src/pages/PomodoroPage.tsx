@@ -8,6 +8,9 @@ import Clock from '../components/ui/Clock'
 import CountDownContainer from '../components/ui/CountDownContainer'
 import { useClock } from '../hooks/useClock'
 import usePomodoroStore from '../stores/pomodoroStore'
+import { Helmet } from 'react-helmet-async'
+
+const url = import.meta.env.VITE_APP_URL
 
 const PomodoroPage = () => {
   const {
@@ -52,6 +55,19 @@ const PomodoroPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Pomodoro Online Grátis | Digital Web Watch</title>
+        <meta
+          name='description'
+          content='Técnica Pomodoro no navegador. Configure ciclos de foco, pausas curtas e longas. Sem instalação. Grátis para usar, fácil de acessar. Aumente sua produtividade com o Pomodoro Timer do Digital Web Watch. , pomodoro online, pomodoro grátis, timer pomodoro, técnica pomodoro, pomodoro para estudos, pomodoro para trabalho, pomodoro sem instalação, pomodoro fácil de usar.'
+        />
+        <meta property='og:title' content='Pomodoro Online Grátis | Digital Web Watch' />
+        <meta
+          property='og:description'
+          content=' Técnica Pomodoro no navegador. Configure ciclos de foco, pausas curtas e longas. Sem instalação. Grátis para usar, fácil de acessar. Aumente sua produtividade com o Pomodoro Timer do Digital Web Watch. , pomodoro online, pomodoro grátis, timer pomodoro, técnica pomodoro, pomodoro para estudos, pomodoro para trabalho, pomodoro sem instalação, pomodoro fácil de usar.'
+        />
+        <link rel='canonical' href={`${url}/`} />
+      </Helmet>
       <section className='flex   w-full items-center justify-center  mx-auto py-7'>
         <Logo size={64} />
       </section>

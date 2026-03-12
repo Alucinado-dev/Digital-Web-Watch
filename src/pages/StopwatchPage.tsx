@@ -7,6 +7,9 @@ import Clock from '../components/ui/Clock'
 import CountDownContainer from '../components/ui/CountDownContainer'
 import { useClock } from '../hooks/useClock'
 import useStopwatchStore from '../stores/stopwatchStore'
+import { Helmet } from 'react-helmet-async'
+
+const url = import.meta.env.VITE_APP_URL
 
 const StopwatchPage = () => {
   const { laps, bestLap, worstLap, actions } = useStopwatchStore(state => state)
@@ -50,6 +53,19 @@ const StopwatchPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Cronômetro Online Gratuito | Digital Web Watch</title>
+        <meta
+          name='description'
+          content='Cronômetro digital com voltas (lap), precisão de centésimos. Funciona direto no navegador, sem instalação. Ideal para esportes, estudos, ou qualquer atividade que precise de medição de tempo. Sem custos, sem anúncios. Grátis para usar, fácil de acessar. cronômetro online, cronômetro grátis, cronômetro com voltas, cronômetro para esportes, cronômetro para estudos, cronômetro sem instalação, cronômetro fácil de usar.'
+        />
+        <meta property='og:title' content='Cronômetro Online Gratuito | Digital Web Watch' />
+        <meta
+          property='og:description'
+          content=' Cronômetro digital com voltas (lap), precisão de centésimos. Funciona direto no navegador, sem instalação. Ideal para esportes, estudos, ou qualquer atividade que precise de medição de tempo. Sem custos, sem anúncios. Grátis para usar, fácil de acessar. '
+        />
+        <link rel='canonical' href={`${url}/stopwatch`} />
+      </Helmet>
       <section className='flex w-full items-center justify-center mx-auto py-7'>
         <Logo size={64} />
       </section>

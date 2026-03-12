@@ -6,6 +6,10 @@ import Clock from '../components/ui/Clock'
 import CountDownContainer from '../components/ui/CountDownContainer'
 import { useClock } from '../hooks/useClock'
 import useTimerStore from '../stores/timerStore'
+import { Helmet } from 'react-helmet-async'
+
+
+const url = import.meta.env.VITE_APP_URL
 
 const TimerPage = () => {
   const {
@@ -35,12 +39,24 @@ const TimerPage = () => {
     reset(duration)
   }
 
-  useEffect(() => {
-    document.title = 'Digital Web Watch | Timer'
-  }, [])
+
 
   return (
     <>
+      <Helmet>
+        <title>Timer Regressivo Online | Digital Web Watch</title>
+        <meta
+          name='description'
+          content='Defina um tempo e receba um alerta quando acabar. Timer gratuito, sem instalação. Ideal para cozinhar, exercícios, estudos ou qualquer atividade que precise de um lembrete. Grátis para usar, fácil de acessar. timer online, timer grátis, timer regressivo, timer para cozinha, timer para exercícios, timer para estudos, timer sem instalação, timer fácil de usar. , timer regressivo online, temporizador online, timer de contagem regressiva, timer de cozinha, timer de exercícios, timer de estudos, timer sem instalação, timer fácil de usar.'
+        />
+        <meta property='og:title' content='Timer Regressivo Online | Digital Web Watch' />
+        <meta
+          property='og:description'
+          content='Defina um tempo e receba um alerta quando acabar. Timer gratuito, sem instalação. Ideal para cozinhar, exercícios, estudos ou qualquer atividade que precise de um lembrete. Grátis para usar, fácil de acessar. timer online, timer grátis, timer regressivo, timer para cozinha, timer para exercícios, timer para estudos, timer sem instalação, timer fácil de usar. , timer regressivo online, temporizador online, timer de contagem regressiva, timer de cozinha, timer de exercícios, timer de estudos, timer sem instalação, timer fácil de usar.'
+        />
+        <link rel='canonical' href={`${url}/timer`} />
+      </Helmet>
+
       <section className='flex w-full items-center justify-center mx-auto py-7'>
         <Logo size={64} />
       </section>
