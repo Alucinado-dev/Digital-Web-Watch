@@ -7,6 +7,20 @@ import './i18n.ts'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then(reg => {
+        console.log('Service Worker registrado:', reg)
+      })
+      .catch(err => {
+        console.error('Erro ao registrar SW:', err)
+      })
+  })
+}
+
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <HelmetProvider>

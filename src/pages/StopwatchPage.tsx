@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+
 import { Flag } from 'lucide-react'
 import Logo from '../components/Logo'
 import PlayBtn from '../components/PlayBtn'
@@ -47,9 +47,6 @@ const StopwatchPage = () => {
     return ''
   }
 
-  useEffect(() => {
-    document.title = 'Digital Web Watch | Cronômetro'
-  }, [])
 
   return (
     <>

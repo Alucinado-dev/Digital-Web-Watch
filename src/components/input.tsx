@@ -24,6 +24,8 @@ const Input =  ({label, placeholder, id, type = 'text',  ...props}: InputProps) 
         >
           {label}
         </label>
+
+        <input type='' />
       </div>
     )
 }

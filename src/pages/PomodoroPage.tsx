@@ -9,6 +9,7 @@ import CountDownContainer from '../components/ui/CountDownContainer'
 import { useClock } from '../hooks/useClock'
 import usePomodoroStore from '../stores/pomodoroStore'
 import { Helmet } from 'react-helmet-async'
+import { useSound } from '../hooks/useSound'
 
 const url = import.meta.env.VITE_APP_URL
 
@@ -23,7 +24,16 @@ const PomodoroPage = () => {
   const currentWorkState = workflow[SessionIndex]
   const timeInSeconds = duration[currentWorkState]
 
+    const { playAlert } = useSound({
+      src: ['sounds/alerts.mp3', 'sounds/alerts.ogg'],
+      volume: 0.7,
+      enabled: true,
+    })
+
+
+    
   const advanceToNextPhase = () => {
+      playAlert()
     actions.advanceToNextWorkState()
   }
 
@@ -45,13 +55,9 @@ const PomodoroPage = () => {
     actions.resetSequence()
   }
 
-  useEffect(() => {
-    document.title = `Digital Web Watch | ${
-      currentWorkState === 'workTime' ? 'Work'
-      : currentWorkState === 'shortBreak' ? 'Short Break'
-      : 'Long Break'
-    }`
-  }, [currentWorkState])
+
+
+
 
   return (
     <>

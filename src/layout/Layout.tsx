@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Outlet } from 'react-router-dom'
 import { SettingsBtn, SettingsModal } from '../features/SettingsModal'
+import VolumeControl from '../features/VolumeControl'
 import Footer from './Footer'
 import Header from './Header'
 
@@ -15,6 +16,9 @@ const Layout = () => {
         <Outlet />
         <div className='fixed bottom-5 right-5'>
           <SettingsBtn />
+        </div>
+        <div className='fixed bottom-5 left-5'>
+          <VolumeControl initialVolume={0.7} />
         </div>
         <SettingsModal />
       </main>

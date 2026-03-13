@@ -7,6 +7,7 @@ import CountDownContainer from '../components/ui/CountDownContainer'
 import { useClock } from '../hooks/useClock'
 import useTimerStore from '../stores/timerStore'
 import { Helmet } from 'react-helmet-async'
+import { useSound } from '../hooks/useSound'
 
 
 const url = import.meta.env.VITE_APP_URL
@@ -17,7 +18,17 @@ const TimerPage = () => {
     actions,
   } = useTimerStore(state => state)
 
+
+
+  const { playAlert } = useSound({
+    src: ['sounds/alerts.mp3', 'sounds/alerts.ogg'],
+
+    volume: 0.7,
+    enabled: true,
+  })
+
   const handleComplete = () => {
+    playAlert()
     actions.setFinished(true)
   }
 
