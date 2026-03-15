@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import sitemap from 'vite-plugin-sitemap'
 
 
+
 import robotsTxt from 'vite-plugin-robots-txt'
 
 // https://vite.dev/config/

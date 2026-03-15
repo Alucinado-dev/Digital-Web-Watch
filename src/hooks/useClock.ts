@@ -4,12 +4,12 @@ type Mode = 'up' | 'down'
 
 interface UseClockOptions {
   mode: Mode
-  startTime: number // em milissegundos
-  interval?: number // em ms, padrão 1000
+  startTime: number
+  interval?: number
   onTick?: (time: number) => void
   onComplete?: () => void
   isRunning?: boolean
-  persistKey?: string // chave para localStorage
+  persistKey?: string
 }
 
 export function useClock({
@@ -30,35 +30,44 @@ export function useClock({
   })
 
   const [running, setRunning] = useState(isRunning)
-const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-const tick = useCallback(() => {
-  setTime(prev => {
-    const next = mode === 'up' ? prev + interval : prev - interval
+  // Refs para onTick e onComplete — evita que funções recriadas no pai
+  // causem re-execução desnecessária dos effects e do tick
+  const onCompleteRef = useRef(onComplete)
+  const onTickRef = useRef(onTick)
 
-    if (persistKey) {
-      localStorage.setItem(persistKey, String(next))
-    }
+  useEffect(() => {
+    onCompleteRef.current = onComplete
+  }, [onComplete])
+  useEffect(() => {
+    onTickRef.current = onTick
+  }, [onTick])
 
-    if (onTick) onTick(next)
+  const tick = useCallback(() => {
+    setTime(prev => {
+      const next = mode === 'up' ? prev + interval : prev - interval
+      if (persistKey) localStorage.setItem(persistKey, String(next))
+      if (onTickRef.current) onTickRef.current(next)
+      if (mode === 'down' && next <= 0) return 0
+      return next
+    })
+  }, [interval, mode, persistKey])
 
-    if (mode === 'down' && next <= 0) {
+  // Observa o tempo e dispara onComplete quando chega a zero
+  // onCompleteRef.current não vai nas deps — é um ref, não muda
+  useEffect(() => {
+    if (mode === 'down' && time <= 0 && running) {
       clearInterval(intervalRef.current!)
       setRunning(false)
-      if (onComplete) onComplete()
-      return 0
+      onCompleteRef.current?.()
     }
-
-    return next
-  })
-}, [interval, mode, onTick, onComplete, persistKey])
-
+  }, [time, mode, running])
 
   useEffect(() => {
     if (running) {
       intervalRef.current = setInterval(tick, interval)
     }
-
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current)
     }

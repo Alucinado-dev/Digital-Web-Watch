@@ -10,6 +10,8 @@ import { useClock } from '../hooks/useClock'
 import usePomodoroStore from '../stores/pomodoroStore'
 import { Helmet } from 'react-helmet-async'
 import { useSound } from '../hooks/useSound'
+import alert from '../assets/audio/mixkit-sci-fi-ship-siren-alert-1653.ogg'
+import alertFallback from '../assets/audio/mixkit-sci-fi-ship-siren-alert-1653.wav'
 
 const url = import.meta.env.VITE_APP_URL
 
@@ -25,7 +27,7 @@ const PomodoroPage = () => {
   const timeInSeconds = duration[currentWorkState]
 
     const { playAlert } = useSound({
-      src: ['sounds/alerts.mp3', 'sounds/alerts.ogg'],
+    src: [alert, alertFallback],
       volume: 0.7,
       enabled: true,
     })
@@ -34,6 +36,7 @@ const PomodoroPage = () => {
     
   const advanceToNextPhase = () => {
       playAlert()
+      console.log('acabou o tempo')
     actions.advanceToNextWorkState()
   }
 

@@ -45,6 +45,7 @@ export const useSound = ({ src, volume = 0.7, enabled = true }: UseSoundOptions)
     if (!enabled) return
 
     howlRef.current?.play()
+    console.log('play alerta')
   }, [enabled])
 
   // Controle de volume imperativo — útil pro slider em tempo real

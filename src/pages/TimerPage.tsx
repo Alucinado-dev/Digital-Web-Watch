@@ -8,6 +8,8 @@ import { useClock } from '../hooks/useClock'
 import useTimerStore from '../stores/timerStore'
 import { Helmet } from 'react-helmet-async'
 import { useSound } from '../hooks/useSound'
+import alert from '../assets/audio/mixkit-sci-fi-ship-siren-alert-1653.ogg'
+import alertFallback from '../assets/audio/mixkit-sci-fi-ship-siren-alert-1653.wav'
 
 
 const url = import.meta.env.VITE_APP_URL
@@ -21,7 +23,7 @@ const TimerPage = () => {
 
 
   const { playAlert } = useSound({
-    src: ['sounds/alerts.mp3', 'sounds/alerts.ogg'],
+    src: [alert, alertFallback],
 
     volume: 0.7,
     enabled: true,
@@ -29,6 +31,7 @@ const TimerPage = () => {
 
   const handleComplete = () => {
     playAlert()
+          console.log('acabou o tempo')
     actions.setFinished(true)
   }
 
