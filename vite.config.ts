@@ -13,7 +13,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     sitemap({
-      hostname: 'https://seudominio.com',
+      hostname: 'https://digital-web-watch.vercel.app/',
       dynamicRoutes: ['/', '/stopwatch', '/timer'],
     }),
     robotsTxt({

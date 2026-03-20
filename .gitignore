@@ -16,7 +16,7 @@ boilerplate.md
 
 # Editor directories and files
 .gemini
-
+.env
 settings.json
 .idea
 .DS_Store
