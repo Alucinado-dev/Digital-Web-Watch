@@ -7,10 +7,23 @@
 [data-theme='neon-dreams'] {
   /* body */
   --body-bg-color-1: var(--color-shark-950);
-  --body-bg-color-2: var(--color-shark-900);
+  --body-bg-color-2: var(--color-shark-950);
   --body-bg-color-3: var(--color-shark-950);
-  --body-bg-color-4: var(--color-shark-900);
+  --body-bg-color-4: var(--color-shark-950);
   --body-bg-color-5: var(--color-shark-950);
+
+    /* novas — grid e beam */
+  --bg-grid-color:         rgba(76, 201, 240, 0.04);   
+  --bg-grid-center-color:  rgba(76, 201, 240, 0.10);
+  --bg-beam-color:      rgba(76, 201, 240, 0.8)    ;   
+     --bg-meteor-color: rgba(247, 37, 133, 0.65);
+
+  /* blobs */
+  --bg-blob-1: var(--color-purple-heart-800);  
+  --bg-blob-2: var(--color-rose-500);          
+  --bg-blob-3: var(--color-seagull-400);  
+  
+ 
 
   /* Header */
   --Header-bg-color: transparent;
@@ -18,16 +31,17 @@
   --navlink-box-color: transparent;
   --navlink-box-border: transparent;
   --navlink-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  --navlink-box-hover: var(--color-aquamarine-700);
+  --navlink-box-hover: var(--color-aquamarine-400);
   --navlink-box-active: var(--color-aquamarine-400);
 
   --navlink-text-color: var(--color-aquamarine-400);
-  --navlink-text-shadow: 2px 2px 2px var(--color-purple-heart-800);
-  --navlink-text-hover: var(--color-aquamarine-700);
+  --navlink-text-shadow: none;
+  --navlink-text-hover: var(--color-aquamarine-400);
   --navlink-text-active: var(--color-aquamarine-400);
 
-  --heading-color: var(--color-purple-heart-800);
-  --heading-shadow: 0 5px 10px var(--color-purple-heart-950);
+
+    --navlink-pill-bg: var(--color-aquamarine-950);
+  --navlink-pill-border: var(--color-aquamarine-500);
 
   --logo-text-color: var(--color-gold-500);
   --logo-text-shadow: 1px 1px 4px var(--color-aquamarine-600);
@@ -35,58 +49,273 @@
   /* Countdown */
   --countdown-bg: var(--color-shark-950);
   --countdown-border-1: var(--color-rose-500);
-  --countdown-border-2: var(--color-rose-500);
+  --countdown-border-2: var(--color-gold-500);
   --countdown-border-3: var(--color-seagull-400);
-  --countdown-border-4: var(--color-seagull-400);
+  --countdown-border-4: var(--color-aquamarine-400);
 
   --countdown-color: var(--color-gold-500);
   --countdown-shadow: 0 4px 6px var(--color-aquamarine-600);
 
-  /* Cycle */
-  --pomodoro-cycleDot-workTime: var(--color-seagull-400);
-  --pomodoro-cycleDot-shortBreak: var(--color-gold-500);
-  --pomodoro-cycleDot-longBreak: var(--color-rose-500);
 
 }
 
 
 
 [data-theme='deep-ocean'] {
-  --primary: var(--color-blue-500);
-  --title-theme2: #03045e;
-  --Watch-border-theme2: #0077b6;
-  --watch-numbers-theme2: #ade8f4;
-  --button-bg-theme2: #023e8a;
+  /* body — alternando midnight-950 com calypso-950 para dar profundidade submarina */
+  --body-bg-color-1: var(--color-midnight-950);
+  --body-bg-color-2: var(--color-calypso-950);
+  --body-bg-color-3: var(--color-midnight-950);
+  --body-bg-color-4: var(--color-fiord-950);
+  --body-bg-color-5: var(--color-midnight-950);
+
+  /* grid — viking ciano muito suave */
+  --bg-grid-color:        rgba(34, 209, 238, 0.04);
+  --bg-grid-center-color: rgba(34, 209, 238, 0.10);
+
+  /* beam — atoll verde-água bioluminescente */
+  --bg-beam-color:   rgba(0, 255, 208, 0.75);
+  /* meteoro — viking ciano elétrico */
+  --bg-meteor-color: rgba(34, 209, 238, 0.80);
+
+  /* blobs — três profundidades do oceano */
+  --bg-blob-1: var(--color-midnight-800);   /* azul profundo */
+  --bg-blob-2: var(--color-calypso-700);    /* ciano médio */
+  --bg-blob-3: var(--color-atoll-900);      /* verde-água escuro */
+
+  /* Header */
+  --Header-bg-color: transparent;
+
+  --navlink-box-color:   transparent;
+  --navlink-box-border:  transparent;
+  --navlink-box-shadow:  rgba(0, 0, 0, 0.3) 0px 3px 8px;
+  --navlink-box-hover:   var(--color-viking-400);
+  --navlink-box-active:  var(--color-viking-400);
+
+  --navlink-text-color:  var(--color-viking-400);
+  --navlink-text-shadow: none;
+  --navlink-text-hover:  var(--color-atoll-400);
+  --navlink-text-active: var(--color-viking-400);
+
+  --navlink-pill-bg:     var(--color-midnight-800);
+  --navlink-pill-border: var(--color-viking-500);
+
+  --logo-text-color:  var(--color-atoll-400);
+  --logo-text-shadow: 1px 1px 6px var(--color-viking-600);
+
+  /* Countdown */
+  --countdown-bg:       var(--color-midnight-950);
+  --countdown-border-1: var(--color-viking-400);
+  --countdown-border-2: var(--color-atoll-400);
+  --countdown-border-3: var(--color-calypso-400);
+  --countdown-border-4: var(--color-midnight-400);
+
+  --countdown-color:  var(--color-atoll-300);
+  --countdown-shadow: 0 4px 8px var(--color-viking-700);
 }
 
 [data-theme='sakura-blossom'] {
-  --primary: var(--color-pink-500);
-  --title-theme3: #ff758f;
-  --Watch-border-theme3: #ff4d6d;
-  --watch-numbers-theme3: #ffc8dd;
-  --button-bg-theme3: #ff4d6d;
+  /* body — mine-shaft escuro com toque quente de quincy */
+  --body-bg-color-1: var(--color-mine-shaft-950);
+  --body-bg-color-2: var(--color-mine-shaft-950);
+  --body-bg-color-3: var(--color-mine-shaft-950);
+  --body-bg-color-4: var(--color-mine-shaft-950);
+  --body-bg-color-5: var(--color-mine-shaft-950);
+
+  /* grid — lavender-blush rosado muito suave */
+  --bg-grid-color:        rgba(253, 164, 195, 0.04);
+  --bg-beam-color:        rgba(255, 90, 159, 0.75);
+  --bg-grid-center-color: rgba(253, 164, 195, 0.10);
+  --bg-meteor-color:      rgba(255, 77, 109, 0.85);
+
+  /* blobs — cereja escuro, rosa médio, vermelho profundo */
+  --bg-blob-1: var(--color-carousel-pink-800);
+  --bg-blob-2: var(--color-lavender-blush-950);
+  --bg-blob-3: var(--color-wild-watermelon-700);
+
+  /* Header */
+  --Header-bg-color: transparent;
+
+  --navlink-box-color:   transparent;
+  --navlink-box-border:  transparent;
+  --navlink-box-shadow:  rgba(0, 0, 0, 0.3) 0px 3px 8px;
+  --navlink-box-hover:   var(--color-lavender-blush-300);
+  --navlink-box-active:  var(--color-lavender-blush-300);
+
+  --navlink-text-color:  var(--color-lavender-blush-300);
+  --navlink-text-shadow: none;
+  --navlink-text-hover:  var(--color-wild-watermelon-400);
+  --navlink-text-active: var(--color-lavender-blush-300);
+
+  --navlink-pill-bg:     var(--color-carousel-pink-950);
+  --navlink-pill-border: var(--color-lavender-blush-400);
+
+  --logo-text-color:  var(--color-quincy-300);
+  --logo-text-shadow: 1px 1px 6px var(--color-carousel-pink-600);
+
+  /* Countdown */
+  --countdown-bg:       var(--color-mine-shaft-950);
+  --countdown-border-1: var(--color-lavender-blush-400);
+  --countdown-border-2: var(--color-wild-watermelon-500);
+  --countdown-border-3: var(--color-carousel-pink-300);
+  --countdown-border-4: var(--color-quincy-300);
+
+  --countdown-color:  var(--color-quincy-200);
+  --countdown-shadow: 0 4px 8px var(--color-carousel-pink-700);
 }
 
 [data-theme='mint-leaves'] {
-  --primary: var(--color-green-500);
-  --title-theme4: #009975;
-  --Watch-border-theme4: #00c698;
-  --watch-numbers-theme4: #90e0ef;
-  --button-bg-theme4: #00c698;
+  /* body — stromboli escuro com toque de gossamer e riptide */
+  --body-bg-color-1: var(--color-stromboli-950);
+  --body-bg-color-2: var(--color-gossamer-950);
+  --body-bg-color-3: var(--color-stromboli-950);
+  --body-bg-color-4: var(--color-riptide-950);
+  --body-bg-color-5: var(--color-stromboli-950);
+
+  /* grid — ottoman verde claro muito suave */
+  --bg-grid-color:        rgba(118, 255, 162, 0.04);
+  --bg-grid-center-color: rgba(118, 255, 162, 0.10);
+  --bg-beam-color:        rgba(95, 233, 208, 0.75);  /* riptide-300 */
+  --bg-meteor-color:      rgba(51, 245, 114, 0.80);  /* ottoman-400 */
+
+  /* blobs — três verdes diferentes criam profundidade na floresta */
+  --bg-blob-1: var(--color-stromboli-700);    /* verde floresta */
+  --bg-blob-2: var(--color-gossamer-800);     /* verde-água escuro */
+  --bg-blob-3: var(--color-ottoman-900);      /* verde escuro intenso */
+
+  /* Header */
+  --Header-bg-color: transparent;
+
+  --navlink-box-color:   transparent;
+  --navlink-box-border:  transparent;
+  --navlink-box-shadow:  rgba(0, 0, 0, 0.3) 0px 3px 8px;
+  --navlink-box-hover:   var(--color-ottoman-400);
+  --navlink-box-active:  var(--color-ottoman-400);
+
+  --navlink-text-color:  var(--color-riptide-300);
+  --navlink-text-shadow: none;
+  --navlink-text-hover:  var(--color-ottoman-300);
+  --navlink-text-active: var(--color-riptide-300);
+
+  --navlink-pill-bg:     var(--color-gossamer-950);
+  --navlink-pill-border: var(--color-riptide-400);
+
+  --logo-text-color:  var(--color-ottoman-300);
+  --logo-text-shadow: 1px 1px 6px var(--color-gossamer-600);
+
+  /* Countdown */
+  --countdown-bg:       var(--color-stromboli-950);
+  --countdown-border-1: var(--color-ottoman-400);
+  --countdown-border-2: var(--color-riptide-300);
+  --countdown-border-3: var(--color-gossamer-400);
+  --countdown-border-4: var(--color-granny-apple-400);
+
+  --countdown-color:  var(--color-ottoman-300);
+  --countdown-shadow: 0 4px 8px var(--color-gossamer-700);
 }
 
 [data-theme='dune-glow'] {
-  --primary: var(--color-yellow-500);
-  --title-theme5: #ffbf69;
-  --Watch-border-theme5: #ff9f1c;
-  --watch-numbers-theme5: #ffe5b4;
-  --button-bg-theme5: #ff9f1c;
+  /* body — camadas de terra escura com toque de cobre */
+  --body-bg-color-1: var(--color-early-dawn-950);
+  --body-bg-color-2: var(--color-givry-950);
+  --body-bg-color-3: var(--color-japonica-950);
+  --body-bg-color-4: var(--color-spice-950);
+  --body-bg-color-5: var(--color-early-dawn-950);
+
+  /* grid — golden-grass dourado muito suave */
+  --bg-grid-color:        rgba(217, 164, 65, 0.05);
+  --bg-grid-center-color: rgba(217, 164, 65, 0.12);
+
+  /* beam — tree-poppy laranja ardente */
+  --bg-beam-color:   rgba(255, 159, 28, 0.80);
+  /* meteoro — early-dawn âmbar claro */
+  --bg-meteor-color: rgba(240, 195, 89, 0.85);
+
+  /* blobs — três camadas do crepúsculo */
+  --bg-blob-1: var(--color-japonica-800);       /* terracota escuro */
+  --bg-blob-2: var(--color-tree-poppy-800);     /* laranja profundo */
+  --bg-blob-3: var(--color-golden-grass-700);   /* dourado queimado */
+
+  /* Header */
+  --Header-bg-color: transparent;
+
+  --navlink-box-color:   transparent;
+  --navlink-box-border:  transparent;
+  --navlink-box-shadow:  rgba(0, 0, 0, 0.35) 0px 3px 8px;
+  --navlink-box-hover:   var(--color-tree-poppy-400);
+  --navlink-box-active:  var(--color-tree-poppy-400);
+
+  --navlink-text-color:  var(--color-tree-poppy-400);
+  --navlink-text-shadow: none;
+  --navlink-text-hover:  var(--color-early-dawn-300);
+  --navlink-text-active: var(--color-tree-poppy-400);
+
+  --navlink-pill-bg:     var(--color-japonica-950);
+  --navlink-pill-border: var(--color-tree-poppy-500);
+
+  --logo-text-color:  var(--color-early-dawn-300);
+  --logo-text-shadow: 1px 1px 6px var(--color-tree-poppy-600);
+
+  /* Countdown */
+  --countdown-bg:       var(--color-early-dawn-950);
+  --countdown-border-1: var(--color-tree-poppy-400);
+  --countdown-border-2: var(--color-early-dawn-300);
+  --countdown-border-3: var(--color-japonica-400);
+  --countdown-border-4: var(--color-golden-grass-400);
+
+  --countdown-color:  var(--color-early-dawn-200);
+  --countdown-shadow: 0 4px 8px var(--color-tree-poppy-700);
 }
 
 [data-theme='overcast'] {
-  --primary: var(--color-blue-500);
-  --title-theme6: #9a8c98;
-  --Watch-border-theme6: #6a4c93;
-  --watch-numbers-theme6: #c9c1d3;
-  --button-bg-theme6: #6a4c93;
+  /* body — camadas de cinza azulado muito próximas, quase imperceptíveis */
+  --body-bg-color-1: var(--color-bright-gray-950);
+  --body-bg-color-2: var(--color-athens-gray-950);
+  --body-bg-color-3: var(--color-geyser-950);
+  --body-bg-color-4: var(--color-affair-950);
+  --body-bg-color-5: var(--color-bright-gray-950);
+
+  /* grid — geyser azulado muito suave */
+  --bg-grid-color:        rgba(185, 200, 215, 0.05);
+  --bg-grid-center-color: rgba(185, 200, 215, 0.12);
+
+  /* beam — affair lavanda — a cor mais distinta da paleta */
+  --bg-beam-color:   rgba(159, 130, 202, 0.85);
+  /* meteoro — athens-gray azul médio — contrasta com a lavanda */
+  --bg-meteor-color: rgba(120, 151, 184, 0.90);
+
+  /* blobs — três tons que criam profundidade fria */
+  --bg-blob-1: var(--color-affair-800);        /* lavanda escuro */
+  --bg-blob-2: var(--color-athens-gray-700);   /* azul-acinzentado */
+  --bg-blob-3: var(--color-geyser-800);        /* azul-aço escuro */
+
+  /* Header */
+  --Header-bg-color: transparent;
+
+  --navlink-box-color:   transparent;
+  --navlink-box-border:  transparent;
+  --navlink-box-shadow:  rgba(0, 0, 0, 0.3) 0px 3px 8px;
+  --navlink-box-hover:   var(--color-geyser-300);
+  --navlink-box-active:  var(--color-geyser-300);
+
+  --navlink-text-color:  var(--color-geyser-300);
+  --navlink-text-shadow: none;
+  --navlink-text-hover:  var(--color-affair-400);
+  --navlink-text-active: var(--color-geyser-300);
+
+  --navlink-pill-bg:     var(--color-athens-gray-800);
+  --navlink-pill-border: var(--color-affair-500);
+
+  --logo-text-color:  var(--color-venus-300);
+  --logo-text-shadow: 1px 1px 6px var(--color-affair-600);
+
+  /* Countdown */
+  --countdown-bg:       var(--color-bright-gray-950);
+  --countdown-border-1: var(--color-affair-500);
+  --countdown-border-2: var(--color-athens-gray-400);
+  --countdown-border-3: var(--color-geyser-400);
+  --countdown-border-4: var(--color-venus-400);
+
+  --countdown-color:  var(--color-geyser-200);
+  --countdown-shadow: 0 4px 8px var(--color-affair-700);
 }

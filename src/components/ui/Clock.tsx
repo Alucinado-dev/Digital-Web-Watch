@@ -31,7 +31,7 @@ const Clock = ({ time }: ClockProps) => {
     <AnimatePresence mode='popLayout' initial={false}>
       <motion.span
         key={secondsKey}
-        className='text-center text-5xl font-bold text-(--countdown-color) [font-family:var(--countdown-font)] text-shadow-(--countdown-shadow)'
+        className='text-center silkscreen-bold  text-5xl font-bold text-(--countdown-color) [font-family:var(--countdown-font)] text-shadow-(--countdown-shadow)'
         initial={{ opacity: 0.4, filter: 'blur(6px)', scale: 0.97 }}
         animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
         exit={{ opacity: 0, filter: 'blur(4px)', scale: 1.02 }}

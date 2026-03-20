@@ -26,6 +26,7 @@ const MinuteField = ({ label, value, onChange, min = 1, max = 180 }: MinuteField
         color: 'rgba(255,255,255,0.45)',
         fontWeight: 500,
       }}
+      className='silkscreen-regular'
     >
       {label}
     </label>
@@ -39,6 +40,7 @@ const MinuteField = ({ label, value, onChange, min = 1, max = 180 }: MinuteField
           const parsed = parseInt(e.target.value)
           if (!isNaN(parsed) && parsed >= min && parsed <= max) onChange(parsed)
         }}
+        className='audiowide-regular'
         style={{
           width: '72px',
           background: 'rgba(255,255,255,0.06)',
@@ -75,6 +77,7 @@ const SectionLabel = ({ children }: { children: string }) => (
         color: 'rgba(255,255,255,0.3)',
         fontWeight: 600,
       }}
+      className='quantico-regular'
     >
       {children}
     </span>
@@ -179,6 +182,7 @@ const SettingsModal = () => {
               letterSpacing: '0.05em',
               color: 'rgba(255,255,255,0.9)',
             }}
+            className='audiowide-regular'
           >
             {t('settings.title')}
           </span>
@@ -236,7 +240,10 @@ const SettingsModal = () => {
         </div>
 
         {/* Ações */}
-        <div style={{ display: 'flex', gap: '10px', justifyContent: 'flex-end' }}>
+        <div
+          style={{ display: 'flex', gap: '10px', justifyContent: 'flex-end' }}
+          className='audiowide-regular'
+        >
           <button
             onClick={handleReset}
             className='btn btn-ghost btn-sm'

@@ -1,9 +1,6 @@
-:root{
-    --heading-font: :
-
-        --navlink-font: ;
-        --countdown-font: ;
-    
+body {
+  background-color: transparent !important;
+  background-image: none !important;
 }
 
 @theme {

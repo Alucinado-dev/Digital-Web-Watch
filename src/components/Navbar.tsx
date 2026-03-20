@@ -140,16 +140,15 @@ const Navbar = () => {
 
       {/* ── DESKTOP: links centrais ── */}
       <div className='navbar-center hidden lg:flex'>
-        <ul className='menu menu-horizontal gap-7 px-1'>
+        <ul className='flex items-center gap-9 px-1'>
           {allNavLinks.map(({ path, Icon, textKey }, index) => {
             const isActive = location.pathname === path
 
             return (
-              // O container do li precisa de position relative para o indicador absoluto
               <motion.li
                 key={path}
-                style={{ position: 'relative' }}
-                // Stagger na entrada inicial — cada link entra com delay progressivo
+                // position relative é o contexto para a pill absoluta
+                style={{ position: 'relative', listStyle: 'none' }}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -159,32 +158,63 @@ const Navbar = () => {
                   damping: 24,
                 }}
               >
-                <NavbarItem asChild>
-                  <NavLink to={path} title={textKey} aria-label={textKey}>
-                    <Icon size={24} />
-                    <span>{textKey}</span>
-                  </NavLink>
-                </NavbarItem>
-
-                {/* Indicador ativo — layoutId faz o Motion identificar
-                    esse elemento em todos os links e animar a transição
-                    da barrinha de um link para outro automaticamente.
-                    É a animação mais elegante da lib com menos código. */}
+                {/* Pill deslizante — layoutId é o que faz a mágica:
+                    o Motion encontra todos os elementos com o mesmo layoutId
+                    e anima a transição de posição/tamanho entre eles.
+                    A pill "viaja" de um li para outro automaticamente. */}
                 {isActive && (
                   <motion.span
-                    layoutId='nav-active-indicator'
+                    layoutId='nav-pill'
                     style={{
                       position: 'absolute',
-                      bottom: -2,
-                      left: '15%',
-                      right: '15%',
-                      height: 2,
-                      borderRadius: 1,
-                      background: 'var(--navlink-text-color, currentColor)',
+                      inset: 0,
+                      borderRadius: '10px',
+                      background: 'var(--navlink-pill-bg, rgba(255,255,255,0.1))',
+                      border: '1px solid var(--navlink-pill-border, rgba(255,255,255,0.15))',
+                      zIndex: 0,
                     }}
                     transition={{ type: 'spring', stiffness: 380, damping: 32 }}
                   />
                 )}
+
+                <NavLink
+                  to={path}
+                  title={textKey}
+                  aria-label={textKey}
+                  style={{ position: 'relative', zIndex: 1 }} // fica acima da pill
+                >
+                  <NavbarItem asChild>
+                    {/* div interno para não perder os estilos do NavbarItem */}
+                    <div className='flex items-center gap-2 px-4 py-2 cursor-pointer'>
+                      {/* Ícone — wiggle só quando ativo, parado quando inativo */}
+                      <motion.span
+                        animate={
+                          isActive ?
+                            {
+                              // rotate oscila entre -12° e +12° infinitamente
+                              // repeat: Infinity com repeatType 'mirror' inverte a direção
+                              rotate: [-12, 12, -12],
+                              transition: {
+                                duration: 0.5,
+                                repeat: Infinity,
+                                repeatType: 'mirror' as const,
+                                ease: 'easeInOut',
+                                // repeatDelay pausa entre cada wiggle completo
+                                // sem isso fica nervoso demais
+                                repeatDelay: 1.2,
+                              },
+                            }
+                          : { rotate: 0 }
+                        }
+                        style={{ display: 'inline-flex', transformOrigin: 'center bottom' }}
+                      >
+                        <Icon size={20} />
+                      </motion.span>
+
+                      <span className='text-sm font-medium uppercase tracking-wide'>{textKey}</span>
+                    </div>
+                  </NavbarItem>
+                </NavLink>
               </motion.li>
             )
           })}

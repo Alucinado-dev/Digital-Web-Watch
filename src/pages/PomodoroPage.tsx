@@ -12,8 +12,8 @@ import { useClock } from '../hooks/useClock'
 import usePomodoroStore from '../stores/pomodoroStore'
 import { Helmet } from 'react-helmet-async'
 import { useSound } from '../hooks/useSound'
-import alert from '../assets/audio/mixkit-sci-fi-ship-siren-alert-1653.ogg'
-import alertFallback from '../assets/audio/mixkit-sci-fi-ship-siren-alert-1653.wav'
+import alert from '../assets/audio/alexis_gaming_cam-timer-terminer-342934.ogg'
+import alertFallback from '../assets/audio/alexis_gaming_cam-timer-terminer-342934.wav'
 import { pageItemVariants } from '../utils/pageItemVariants'
 
 const url = import.meta.env.VITE_APP_URL

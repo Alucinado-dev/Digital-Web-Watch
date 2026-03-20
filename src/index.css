@@ -23,32 +23,48 @@ html {
   scrollbar-width: none;
 }
 
-body {
-  min-height: 100vh;
-  background-image: linear-gradient(
-    45deg,
-    var(--body-bg-color-1) 0%,
-    var(--body-bg-color-2) 25%,
-    var(--body-bg-color-3) 50%,
-    var(--body-bg-color-4) 75%,
-    var(--body-bg-color-5) 100%
-  );
-  background-color: var(--body-bg-color-1);
-  animation: gradient 5s ease infinite;
-  position: relative;
+.audiowide-regular {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.quantico-regular {
+  font-family: "Quantico", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
+
+.quantico-bold {
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.quantico-regular-italic {
+  font-family: "Quantico", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.quantico-bold-italic {
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.silkscreen-regular {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.silkscreen-bold {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 
 @theme {
   --breakpoint-small-mobile: 320px;

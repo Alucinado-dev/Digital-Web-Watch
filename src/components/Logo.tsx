@@ -23,7 +23,7 @@ const Logo = ({ size, ...props }: LogoProps) => {
         />
       </figure>
 
-      <h1 className='large-tablet:text-3xl text-2xl mobile:text-4xl font-bold text-(--logo-text-color) text-shadow-(--logo-text-shadow)'>
+      <h1 className='large-tablet:text-3xl text-2xl mobile:text-4xl audiowide-regular  font-bold text-(--logo-text-color) text-shadow-(--logo-text-shadow)'>
         Digital Web Watch
       </h1>
     </motion.div>
