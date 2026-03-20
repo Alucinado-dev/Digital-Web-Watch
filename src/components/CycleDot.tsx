@@ -1,3 +1,4 @@
+import { motion, AnimatePresence } from 'motion/react'
 import type { WorkStateVariant } from '../stores/pomodoroStore'
 
 type DotStatus = 'past' | 'current' | 'next' | 'future'
@@ -27,18 +28,19 @@ const opacityMap: Record<DotStatus, number> = {
   current: 1,
 }
 
-// Largura fixa de todos os slots — garante que o dot central
-// fique sempre no centro geométrico da linha, independente do tamanho de cada dot.
 const SLOT_SIZE = 38
 
 const CycleDot = ({ variant, status }: CycleDotProps) => {
   const { base, glow, ring } = colorMap[variant]
   const size = sizeMap[status]
-  const opacity = opacityMap[status]
   const isCurrent = status === 'current'
 
   return (
-    <span
+    // motion.span com layout — quando o status muda e o componente
+    // muda de posição na janela deslizante, o Motion anima o movimento
+    // automaticamente sem calcular nada manualmente
+    <motion.span
+      layout
       style={{
         position: 'relative',
         display: 'inline-flex',
@@ -46,48 +48,65 @@ const CycleDot = ({ variant, status }: CycleDotProps) => {
         justifyContent: 'center',
         width: `${SLOT_SIZE}px`,
         height: `${SLOT_SIZE}px`,
-        opacity,
-        transition: 'opacity 0.4s ease',
         flexShrink: 0,
       }}
+      // Anima a opacidade quando o status muda
+      animate={{ opacity: opacityMap[status] }}
+      transition={{ duration: 0.35, ease: 'easeOut' }}
     >
-      {/* Pulse ring — tamanho absoluto, não afeta o slot */}
-      {isCurrent && (
-        <span
-          style={{
-            position: 'absolute',
-            width: `${size + 16}px`,
-            height: `${size + 16}px`,
-            borderRadius: '50%',
-  
-            backgroundColor: ring,
-            animation: 'cyclePulse 2s ease-in-out infinite',
-          }}
-        />
-      )}
+      {/* Ring pulsante — AnimatePresence para animar entrada/saída */}
+      <AnimatePresence>
+        {isCurrent && (
+          <motion.span
+            key='ring'
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 1.4, opacity: 0 }}
+            transition={{ duration: 0.35, ease: 'easeOut' }}
+            style={{
+              position: 'absolute',
+              width: `${size + 16}px`,
+              height: `${size + 16}px`,
+              borderRadius: '50%',
+              border: `1.5px solid ${base}`,
+              backgroundColor: ring,
+              animation: 'cyclePulse 2s ease-in-out infinite',
+            }}
+          />
+        )}
+      </AnimatePresence>
 
-      {/* Dot principal — cresce/encolhe dentro do slot fixo */}
-      <span
+      {/* Dot principal — Motion anima width/height quando o status muda */}
+      <motion.span
+        layout
+        animate={{
+          width: size,
+          height: size,
+          // Glow só no dot atual
+          boxShadow: isCurrent ? `0 0 12px 3px ${glow}` : '0 0 0px 0px transparent',
+        }}
+        transition={{
+          // Spring com bounce para o crescimento do dot atual
+          type: 'spring',
+          stiffness: 320,
+          damping: 22,
+        }}
         style={{
-          width: `${size}px`,
-          height: `${size}px`,
           borderRadius: '50%',
           backgroundColor: base,
-          boxShadow: isCurrent ? `0 0 12px 3px ${glow}` : 'none',
-          transition:
-            'width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), height 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease',
           position: 'relative',
           zIndex: 1,
+          flexShrink: 0,
         }}
       />
 
       <style>{`
         @keyframes cyclePulse {
-          0%, 100% { transform: scale(1); opacity: 0.6; }
+          0%, 100% { transform: scale(1);    opacity: 0.6;  }
           50%       { transform: scale(1.35); opacity: 0.15; }
         }
       `}</style>
-    </span>
+    </motion.span>
   )
 }
 

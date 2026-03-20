@@ -1,5 +1,7 @@
 import type { HTMLAttributes } from 'react'
+import { motion } from 'motion/react'
 import logo from '../assets/img/Digital Web Watch logo.png'
+import { pageItemVariants } from '../utils/pageItemVariants'
 
 type LogoProps = HTMLAttributes<HTMLElement> & {
   size: number
@@ -7,7 +9,12 @@ type LogoProps = HTMLAttributes<HTMLElement> & {
 
 const Logo = ({ size, ...props }: LogoProps) => {
   return (
-    <div className='items-center flex w-full justify-center cursor-pointer '>
+    // motion.div herda as variants do PageWrapper via contexto
+    // não precisa declarar initial/animate — o stagger cuida disso
+    <motion.div
+      className='items-center flex w-full justify-center cursor-pointer'
+      variants={pageItemVariants}
+    >
       <figure {...props} style={{ width: `${size}px`, height: `${size}px` }} className='hidden'>
         <img
           className='w-full h-full object-center object-cover'
@@ -16,10 +23,10 @@ const Logo = ({ size, ...props }: LogoProps) => {
         />
       </figure>
 
-      <h1 className='large-tablet:text-3xl text-2xl mobile:text-4xl font-bold    text-(--logo-text-color) text-shadow-(--logo-text-shadow) '>
+      <h1 className='large-tablet:text-3xl text-2xl mobile:text-4xl font-bold text-(--logo-text-color) text-shadow-(--logo-text-shadow)'>
         Digital Web Watch
       </h1>
-    </div>
+    </motion.div>
   )
 }
 

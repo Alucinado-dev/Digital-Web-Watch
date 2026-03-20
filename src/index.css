@@ -7,6 +7,22 @@
 @plugin "daisyui" {
   themes: dark --default;
 }
+
+html {
+  scrollbar-gutter: stable;
+  overflow-y: scroll; /* força a scrollbar sempre presente */
+}
+
+/* Esconde visualmente no Chrome/Safari */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Esconde no Firefox */
+html {
+  scrollbar-width: none;
+}
+
 body {
   min-height: 100vh;
   background-image: linear-gradient(

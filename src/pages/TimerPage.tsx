@@ -1,16 +1,18 @@
 import { useEffect } from 'react'
+import { motion } from 'motion/react'
 import Logo from '../components/Logo'
 import PlayBtn from '../components/PlayBtn'
 import ResetBtn from '../components/ResetBtn'
 import Clock from '../components/ui/Clock'
 import CountDownContainer from '../components/ui/CountDownContainer'
+import PageWrapper from '../components/PageWrapper'
 import { useClock } from '../hooks/useClock'
 import useTimerStore from '../stores/timerStore'
 import { Helmet } from 'react-helmet-async'
 import { useSound } from '../hooks/useSound'
 import alert from '../assets/audio/mixkit-sci-fi-ship-siren-alert-1653.ogg'
 import alertFallback from '../assets/audio/mixkit-sci-fi-ship-siren-alert-1653.wav'
-
+import { pageItemVariants } from '../utils/pageItemVariants'
 
 const url = import.meta.env.VITE_APP_URL
 
@@ -20,18 +22,14 @@ const TimerPage = () => {
     actions,
   } = useTimerStore(state => state)
 
-
-
   const { playAlert } = useSound({
     src: [alert, alertFallback],
-
     volume: 0.7,
     enabled: true,
   })
 
   const handleComplete = () => {
     playAlert()
-          console.log('acabou o tempo')
     actions.setFinished(true)
   }
 
@@ -43,7 +41,6 @@ const TimerPage = () => {
     persistKey: 'timer-time',
   })
 
-  // Sincroniza o relógio se a duração configurada mudar
   useEffect(() => {
     reset(duration)
   }, [duration, reset])
@@ -53,38 +50,47 @@ const TimerPage = () => {
     reset(duration)
   }
 
-
-
   return (
     <>
       <Helmet>
         <title>Timer Regressivo Online | Digital Web Watch</title>
         <meta
           name='description'
-          content='Defina um tempo e receba um alerta quando acabar. Timer gratuito, sem instalação. Ideal para cozinhar, exercícios, estudos ou qualquer atividade que precise de um lembrete. Grátis para usar, fácil de acessar. timer online, timer grátis, timer regressivo, timer para cozinha, timer para exercícios, timer para estudos, timer sem instalação, timer fácil de usar. , timer regressivo online, temporizador online, timer de contagem regressiva, timer de cozinha, timer de exercícios, timer de estudos, timer sem instalação, timer fácil de usar.'
+          content='Defina um tempo e receba um alerta quando acabar. Timer gratuito, sem instalação. Ideal para cozinhar, exercícios, estudos ou qualquer atividade que precise de um lembrete.'
         />
         <meta property='og:title' content='Timer Regressivo Online | Digital Web Watch' />
         <meta
           property='og:description'
-          content='Defina um tempo e receba um alerta quando acabar. Timer gratuito, sem instalação. Ideal para cozinhar, exercícios, estudos ou qualquer atividade que precise de um lembrete. Grátis para usar, fácil de acessar. timer online, timer grátis, timer regressivo, timer para cozinha, timer para exercícios, timer para estudos, timer sem instalação, timer fácil de usar. , timer regressivo online, temporizador online, timer de contagem regressiva, timer de cozinha, timer de exercícios, timer de estudos, timer sem instalação, timer fácil de usar.'
+          content='Defina um tempo e receba um alerta quando acabar. Timer gratuito, sem instalação.'
         />
         <link rel='canonical' href={`${url}/timer`} />
       </Helmet>
 
-      <section className='flex w-full items-center justify-center mx-auto py-7'>
-        <Logo size={64} />
-      </section>
+      <PageWrapper>
+        <motion.section
+          variants={pageItemVariants}
+          className='flex w-full items-center justify-center mx-auto py-7'
+        >
+          <Logo size={64} />
+        </motion.section>
 
-      <section className='w-full flex relative items-center justify-center mx-auto py-14'>
-        <CountDownContainer circleSize={280} circleSizeMobile={240}>
-          <Clock time={time} />
-        </CountDownContainer>
-      </section>
+        <motion.section
+          variants={pageItemVariants}
+          className='w-full flex relative items-center justify-center mx-auto py-14'
+        >
+          <CountDownContainer circleSize={280} circleSizeMobile={240} isRunning={isRunning}>
+            <Clock time={time} />
+          </CountDownContainer>
+        </motion.section>
 
-      <section className='w-full gap-6 flex relative items-center justify-center mx-auto py-6'>
-        <PlayBtn isPaused={!isRunning} onClick={() => (isRunning ? pause() : start())} />
-        <ResetBtn onClick={handleReset} />
-      </section>
+        <motion.section
+          variants={pageItemVariants}
+          className='w-full gap-6 flex relative items-center justify-center mx-auto py-6'
+        >
+          <PlayBtn isPaused={!isRunning} onClick={() => (isRunning ? pause() : start())} />
+          <ResetBtn onClick={handleReset} />
+        </motion.section>
+      </PageWrapper>
     </>
   )
 }

@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { motion } from 'motion/react'
 import Cycles from '../components/Cycles'
 import Logo from '../components/Logo'
 import NextBtn from '../components/NextBtn'
@@ -6,12 +7,14 @@ import PlayBtn from '../components/PlayBtn'
 import ResetBtn from '../components/ResetBtn'
 import Clock from '../components/ui/Clock'
 import CountDownContainer from '../components/ui/CountDownContainer'
+import PageWrapper from '../components/PageWrapper'
 import { useClock } from '../hooks/useClock'
 import usePomodoroStore from '../stores/pomodoroStore'
 import { Helmet } from 'react-helmet-async'
 import { useSound } from '../hooks/useSound'
 import alert from '../assets/audio/mixkit-sci-fi-ship-siren-alert-1653.ogg'
 import alertFallback from '../assets/audio/mixkit-sci-fi-ship-siren-alert-1653.wav'
+import { pageItemVariants } from '../utils/pageItemVariants'
 
 const url = import.meta.env.VITE_APP_URL
 
@@ -26,17 +29,14 @@ const PomodoroPage = () => {
   const currentWorkState = workflow[SessionIndex]
   const timeInSeconds = duration[currentWorkState]
 
-    const { playAlert } = useSound({
+  const { playAlert } = useSound({
     src: [alert, alertFallback],
-      volume: 0.7,
-      enabled: true,
-    })
+    volume: 0.7,
+    enabled: true,
+  })
 
-
-    
   const advanceToNextPhase = () => {
-      playAlert()
-      console.log('acabou o tempo')
+    playAlert()
     actions.advanceToNextWorkState()
   }
 
@@ -48,19 +48,12 @@ const PomodoroPage = () => {
     persistKey: 'pomodoro-time',
   })
 
-  // Efeito que sincroniza o relógio quando a fase do Pomodoro muda
   useEffect(() => {
     const newTimeInMs = duration[workflow[SessionIndex]] * 1000
     reset(newTimeInMs)
   }, [SessionIndex, duration, reset, workflow])
 
-  const handleReset = () => {
-    actions.resetSequence()
-  }
-
-
-
-
+  const handleReset = () => actions.resetSequence()
 
   return (
     <>
@@ -73,31 +66,45 @@ const PomodoroPage = () => {
         <meta property='og:title' content='Pomodoro Online Grátis | Digital Web Watch' />
         <meta
           property='og:description'
-          content=' Técnica Pomodoro no navegador. Configure ciclos de foco, pausas curtas e longas. Sem instalação. Grátis para usar, fácil de acessar. Aumente sua produtividade com o Pomodoro Timer do Digital Web Watch. , pomodoro online, pomodoro grátis, timer pomodoro, técnica pomodoro, pomodoro para estudos, pomodoro para trabalho, pomodoro sem instalação, pomodoro fácil de usar.'
+          content='Técnica Pomodoro no navegador. Configure ciclos de foco, pausas curtas e longas. Sem instalação.'
         />
         <link rel='canonical' href={`${url}/`} />
       </Helmet>
-      <section className='flex   w-full items-center justify-center  mx-auto py-7'>
-        <Logo size={64} />
-      </section>
 
-      <section className='w-full flex relative items-center justify-center  mx-auto py-14'>
-        <CountDownContainer circleSize={280} circleSizeMobile={240}>
-          <Clock time={time} />
-        </CountDownContainer>
-      </section>
+      {/* PageWrapper orquestra o stagger de todos os filhos */}
+      <PageWrapper>
+        <motion.section
+          variants={pageItemVariants}
+          className='flex w-full items-center justify-center mx-auto py-7'
+        >
+          <Logo size={64} />
+        </motion.section>
 
-      <section className='w-full flex relative items-center justify-center   mx-auto py-6'></section>
+        <motion.section
+          variants={pageItemVariants}
+          className='w-full flex relative items-center justify-center mx-auto py-14'
+        >
+          <CountDownContainer circleSize={280} circleSizeMobile={240} isRunning={isRunning}>
+            <Clock time={time} />
+          </CountDownContainer>
+        </motion.section>
 
-      <section className='w-full flex relative items-center justify-center  mx-auto  h-40'>
-        <Cycles />
-      </section>
+        <motion.section
+          variants={pageItemVariants}
+          className='w-full flex relative items-center justify-center mx-auto h-40'
+        >
+          <Cycles />
+        </motion.section>
 
-      <section className='w-full gap-6 flex relative items-center justify-center  mx-auto py-6'>
-        <PlayBtn isPaused={!isRunning} onClick={() => (isRunning ? pause() : start())} />
-        <ResetBtn onClick={handleReset} />
-        <NextBtn onClick={advanceToNextPhase} />
-      </section>
+        <motion.section
+          variants={pageItemVariants}
+          className='w-full gap-6 flex relative items-center justify-center mx-auto py-6'
+        >
+          <PlayBtn isPaused={!isRunning} onClick={() => (isRunning ? pause() : start())} />
+          <ResetBtn onClick={handleReset} />
+          <NextBtn onClick={advanceToNextPhase} />
+        </motion.section>
+      </PageWrapper>
     </>
   )
 }
